@@ -1,79 +1,31 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Casuale</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-            width: 80%;
-            max-width: 1200px;
-        }
-
-        .box {
-            background-color: #00aaff;
-            padding: 20px;
-            color: white;
-            text-align: center;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-        }
-
-            .box:hover {
-                transform: scale(1.1);
-                background-color: #ffaa00;
-            }
-
-            .box:nth-child(odd) {
-                background-color: #ff5555;
-            }
-
-        .large-box {
-            grid-column: span 2;
-            background-color: #55ff55;
-        }
-
-        .tall-box {
-            grid-row: span 2;
-            background-color: #ff55ff;
-        }
-
-        .wide-box {
-            grid-column: span 3;
-            background-color: #5555ff;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Gabriele Garofalo - Portfolio</title>
 </head>
-<body>
-    <div class="container">
-        <div class="box">Box 1</div>
-        <div class="box large-box">Box 2 (Large)</div>
-        <div class="box">Box 3</div>
-        <div class="box tall-box">Box 4 (Tall)</div>
-        <div class="box">Box 5</div>
-        <div class="box">Box 6</div>
-        <div class="box wide-box">Box 7 (Wide)</div>
-        <div class="box">Box 8</div>
-        <div class="box">Box 9</div>
-    </div>
-</body>
-</html>
 
+<body>
+    <header>
+        <h1>Gabriele Garofalo</h1>
+        <h2>Junior Game Programmer</h2>
+        <p>Game programmer specializing in systems and gameplay programming.</p>
+    </header>
+    <section class="projects">
+        <h3>Game Programming</h3>
+        <div class="project" onclick="location.href='bug_shooter.html'">
+            <h4>Bug Shooter (2023)</h4>
+            <p>This project is a take on the Space Shooter genre.</p>
+        </div>
+        <div class="project" onclick="location.href='bomberbots.html'">
+            <h4>Bomberbots (2022)</h4>
+            <p>This project is a Bomberman clone made in Lua.</p>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
