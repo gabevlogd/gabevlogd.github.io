@@ -18,17 +18,25 @@ header {
 }
 
 .header-content {
-    max-width: 800px;
+    max-width: 1300px;
     margin: auto;
     padding-left: 10px;
 }
 
+    .header-content img {
+        width: 60px;
+        height: 60px;
+    }
+
     .header-content h1 {
         color: #e03a8d;
+        font-size: 250%;
     }
+
 
     .header-content small {
         font-size: 60%;
+        font-weight: 300;
     }
 
     .header-content div {
@@ -50,7 +58,7 @@ main {
 }
 
 .main-content {
-    max-width: 800px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -93,7 +101,7 @@ footer {
 }
 
 .footer-content {
-    max-width: 800px;
+    max-width: 1300px;
     height: 150px;
     margin: 0 auto;
 }
