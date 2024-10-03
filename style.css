@@ -1,3 +1,8 @@
+/* styles.css */
+a {
+    text-decoration: none;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #212121;
@@ -12,16 +17,36 @@ header {
     background-color: #212121;
 }
 
-
-
 .header-content {
     max-width: 800px;
-    height: 100px;
-    margin: 0 auto;
+    margin: auto;
+    padding-left: 10px;
 }
 
+    .header-content h1 {
+        color: #e03a8d;
+    }
+
+    .header-content small {
+        font-size: 60%;
+    }
+
+    .header-content div {
+        float: left;
+        width: 50%;
+    }
+
+    .header-content img {
+        width: 40px;
+        height: 40px;
+        float: right;
+        padding-top: 20px;
+        padding-right: 20px;
+    }
+
 main {
-    background-color: #212121;
+    padding-top: 120px;
+    padding-bottom: 50px;
 }
 
 .main-content {
@@ -29,18 +54,68 @@ main {
     margin: 0 auto;
 }
 
+/* Container della griglia */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
 
+
+
+/* Elementi della griglia */
+.grid-item {
+    background-color: #2e2e2e;
+    color: white;
+}
+
+    .grid-item img {
+        width: 100%;
+        padding: 0;
+        height: auto;
+    }
+
+    .grid-item h3, p {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .grid-item h3 {
+        color: #e6e131;
+    }
 
 footer {
     position: static;
     top: 100%;
     left: 0;
     height: 200px;
-    background-color: #ff00ea;
+    background-color: #e03a8d;
 }
 
 .footer-content {
     max-width: 800px;
     height: 150px;
     margin: 0 auto;
+}
+
+/*switch behaviour when scren size is under 700px*/
+@media screen and (max-width: 700px) {
+    .header-content div {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+        font-size: 70%;
+    }
+
+    .header-content img {
+        width: 30px;
+        height: 30px;
+        padding-top: 0px;
+        padding-bottom: 10px;
+        float: none;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Passa a una sola colonna */
+    }
 }
