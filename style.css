@@ -24,47 +24,48 @@ header {
 }
 
 
+.header-content h1 {
+    color: #e03a8d;
+    font-size: 250%;
+}
 
-    .header-content h1 {
-        color: #e03a8d;
-        font-size: 250%;
-    }
+.header-content div{
+    float: left;
+    width: 70%;
+}
 
-    .header-content div{
-        float: left;
-        width: 70%;
-    }
+.header-content nav {
+    float: left;
+    width: 30%;
+}
 
-    .header-content nav {
-        float: left;
-        width: 30%;
-    }
+.header-content-links img {
+    width: 40px;
+    height: 40px;
+    float: right;
+    padding-top: 40px;
+    padding-right: 20px;
+}
 
-    .header-content-links img {
-        width: 40px;
-        height: 40px;
-        float: right;
-        padding-top: 30px;
-        padding-right: 20px;
-    }
+.header-content-profile img{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 10px;
+    padding-top: 5px;
+}
 
-    .header-content-profile img{
-        width: 70px;
-        height: 70px;
-        float: left;
-        margin-right: 10px;
-        padding-top: 5px;
-    }
-
-    .header-content-profile h2{
-        padding-left: 80px;
-        /* margin-bottom: 50px; */
-        transform: translateY(-25px);
-        font-weight: 200;
-    }
+.header-content-profile h2{
+    padding-left: 80px;
+    /* margin-bottom: 50px; */
+    transform: translateY(-25px);
+    font-weight: 200;
+}
+    
 
 main {
-    padding-top: 120px;
+    margin-top: 160px;
+    /* padding-top: 120px; */
     padding-bottom: 50px;
 }
 
@@ -72,6 +73,30 @@ main {
     max-width: 1300px;
     margin: 0 auto;
 }
+
+.about{
+    /* display: flex; */
+    /* align-content: center; */
+    background-color: #212121;
+}
+
+.about img{
+    display: block;
+    margin: 0 auto;
+    width: 240px;               /* Dimensione dell'immagine */
+    height: 240px;              /* Altezza corrispondente per mantenere la proporzione circolare */
+    border-radius: 50%;         /* Rende l'immagine circolare */
+    border: 3px solid #e6e131;  /* Colore del bordo */
+    box-sizing: border-box;
+}
+
+.about p{
+    margin: 0 auto;
+    font-size: 20pt;
+    max-width: 60%;
+    text-align: justify;
+}
+
 
 /* Container della griglia */
 .grid-container {
@@ -145,20 +170,23 @@ footer {
 
     .header-content-links{
         height: 20px;
-        min-width: 150px;
-        /* background-color: aqua; */
-        transform: translateY(-60px);
+        min-width: 150px; /*avoid logos exceed the page on the right */
+        transform: translateY(-50px);
+        margin-bottom: 10px;
     }
 
     .header-content-links img {
         width: 30px;
         height: 30px;
         margin-bottom: auto;
-        /* transform: translateY(-60px); */
+    }
+
+    .about p{
+        font-size: 15pt;
+        max-width: 100%;
     }
 
     .grid-container {
         grid-template-columns: 1fr;
-        /* Passa a una sola colonna */
     }
 }
