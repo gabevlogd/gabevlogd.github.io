@@ -1,12 +1,32 @@
 /* styles.css */
-a {
-    text-decoration: none;
+
+@font-face {
+    font-family: 'Codec-Bold';
+    src: url('font/Codec-Cold-Bold-trial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: 'Codec-Light';
+    src: url('font/Codec-Cold-Light-trial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Codec-Bold, sans-serif;
     background-color: #212121;
     color: #fff;
+}
+
+p{
+    font-family: Codec-Light;
+}
+
+a {
+    text-decoration: none;
 }
 
 header {
@@ -27,6 +47,10 @@ header {
 .header-content h1 {
     color: #e03a8d;
     font-size: 250%;
+}
+
+.header-content h2{
+    font-family: Codec-Light;
 }
 
 .header-content div{
@@ -52,7 +76,7 @@ header {
     height: 70px;
     float: left;
     margin-right: 10px;
-    padding-top: 5px;
+    padding-top: -2px;
 }
 
 .header-content-profile h2{
@@ -67,6 +91,10 @@ main {
     margin-top: 160px;
     /* padding-top: 120px; */
     padding-bottom: 50px;
+}
+
+main h2{
+    font-size: xx-large;
 }
 
 .main-content {
@@ -93,10 +121,28 @@ main {
 .about p{
     margin: 0 auto;
     font-size: 20pt;
-    max-width: 60%;
-    text-align: justify;
+    max-width: 70%;
+    margin-bottom: 100px;
 }
 
+.skils-item {
+    display: flex; /* Attiva Flexbox */
+    justify-content: center; /* Centra orizzontalmente */
+}
+
+.skils h3{
+    color: #e6e131;
+    display: inline-block;
+    margin-right: 10px;
+    border: 2px solid #e6e131;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.projects h2{
+    margin-bottom: 40px;
+}
 
 /* Container della griglia */
 .grid-container {
@@ -184,6 +230,12 @@ footer {
     .about p{
         font-size: 15pt;
         max-width: 100%;
+    }
+
+    .skils-item{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* gap: 2px; */
     }
 
     .grid-container {
