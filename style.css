@@ -125,12 +125,12 @@ main h2{
     margin-bottom: 100px;
 }
 
-.skils-item {
+.skills-item {
     display: flex; /* Attiva Flexbox */
     justify-content: center; /* Centra orizzontalmente */
 }
 
-.skils h3{
+.skills h3{
     color: #e6e131;
     display: inline-block;
     margin-right: 10px;
@@ -232,7 +232,7 @@ footer {
         max-width: 100%;
     }
 
-    .skils-item{
+    .skills-item{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         /* gap: 2px; */
