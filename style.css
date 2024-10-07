@@ -72,7 +72,7 @@ header {
     padding-right: 20px;
 }
 
-.header-content-links img:hover, img:focus, img:active{
+.header-content-links img:hover, .header-content-links img:focus, .header-content-links img:active{
     filter: grayscale(100%);
 }
 
@@ -81,7 +81,8 @@ header {
     height: 70px;
     float: left;
     margin-right: 10px;
-    padding-top: -2px;
+    /* padding-top: -10px; */
+    margin-top: -4px;
 }
 
 .header-content-profile h2{
@@ -169,11 +170,11 @@ main h2{
     border-radius: 10px;
 }
 
-.grid-item:hover, .grid-item:focus, .grid-item:active h3{
+.grid-item:hover h3, .grid-item:focus h3, .grid-item:active h3{
     filter: grayscale(100%);
 }
 
-.grid-item:hover, .grid-item:focus, .grid-item:active .overlay{
+.grid-item:hover .overlay, .grid-item:focus .overlay, .grid-item:active .overlay{
     opacity: 1;
 }
 
@@ -245,7 +246,7 @@ main h2{
     padding-left: 10px;
 }
 
-.educations-grid-item:hover, .educations-grid-item:focus, .educations-grid-item:active a{
+.educations-grid-item:hover a, .educations-grid-item:focus a, .educations-grid-item:active a{
     filter: grayscale(100%);
 }
 
