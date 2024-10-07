@@ -1,28 +1,28 @@
 /* styles.css */
 
 @font-face {
-    font-family: 'Codec-Bold';
-    src: url('font/Codec-Cold-Bold-trial.ttf') format('truetype');
+    font-family: 'Heavy';
+    src: url('font/Octarine-Bold.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Codec-Light';
-    src: url('font/Codec-Cold-Light-trial.ttf') format('truetype');
+    font-family: 'Thin';
+    src: url('font/Octarine-Light.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 
 body {
-    font-family: Codec-Bold, sans-serif;
+    font-family: Heavy, sans-serif;
     background-color: #212121;
     color: #fff;
 }
 
 p{
-    font-family: Codec-Light;
+    font-family: Thin;
 }
 
 a {
@@ -35,6 +35,7 @@ header {
     left: 0;
     width: 100%;
     background-color: #212121;
+    z-index: 1000;
 }
 
 .header-content {
@@ -50,7 +51,7 @@ header {
 }
 
 .header-content h2{
-    font-family: Codec-Light;
+    font-family: Thin;
 }
 
 .header-content div{
@@ -69,6 +70,10 @@ header {
     float: right;
     padding-top: 40px;
     padding-right: 20px;
+}
+
+.header-content-links img:hover {
+    filter: grayscale(100%);
 }
 
 .header-content-profile img{
@@ -125,6 +130,10 @@ main h2{
     margin-bottom: 100px;
 }
 
+.about p b{
+    color: #e6e131;
+}
+
 .skills-item {
     display: flex; /* Attiva Flexbox */
     justify-content: center; /* Centra orizzontalmente */
@@ -148,7 +157,7 @@ main h2{
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 15px;
 }
 
 
@@ -157,22 +166,100 @@ main h2{
 .grid-item {
     background-color: #2e2e2e;
     color: white;
+    border-radius: 10px;
 }
 
-    .grid-item img {
-        width: 100%;
-        padding: 0;
-        height: auto;
-    }
+.grid-item:hover h3{
+    filter: grayscale(100%);
+}
 
-    .grid-item h3, p {
-        margin: 0;
-        padding: 10px;
-    }
+.grid-item:hover .overlay{
+    opacity: 1;
+}
 
-    .grid-item h3 {
-        color: #e6e131;
-    }
+.overlay-container{
+    position: relative;
+}
+
+.overlay{
+    position: absolute; /* Posiziona il div sopra l'immagine */
+    top: 0; /* Allinea alla parte superiore del contenitore */
+    left: 0; /* Allinea alla parte sinistra del contenitore */
+    width: 100%; /* Stessa larghezza dell'immagine */
+    height: 100%; /* Stessa altezza dell'immagine */
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero trasparente */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0; /* Nasconde l'overlay di default */
+    transition: opacity 0.3s ease; /* Animazione della transizione */
+
+    display: flex; /* Abilita il layout in flexbox */
+    justify-content: center; /* Allinea gli elementi orizzontalmente */
+    align-items: center;
+}
+
+.overlay img{
+    max-width: 25px;
+    max-height: 25px;
+    margin-right: 10px;
+} 
+
+
+.grid-item img {
+    width: 100%;
+    padding: 0;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.grid-item a{
+    color: #fff;
+}
+
+.grid-item h3, p {
+    margin: 0;
+    padding: 10px;
+}
+
+.grid-item h3 {
+    color: #e6e131;
+    font-size: x-large;
+}   
+
+.educations-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.educations h2{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.educations-grid-item{
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    padding: auto;
+    padding-left: 10px;
+}
+
+.educations-grid-item:hover a{
+    filter: grayscale(100%);
+}
+
+.educations-grid-item h3{
+    color: #e6e131;
+}
+
+.educations-grid-item p{
+    padding-left: 0px;
+    text-decoration: none;
+    color: #fff;
+}
+
+    
 
 footer {
     position: static;
@@ -183,9 +270,22 @@ footer {
 }
 
 .footer-content {
+    display: flex;
     max-width: 1300px;
     height: 150px;
     margin: 0 auto;
+    font-family: Thin;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-content a{
+    text-decoration: underline;
+    color:#fff
+}
+
+.footer-content h5{
+    margin-top: 130px;
 }
 
 /*switch behaviour when scren size is under 700px*/
@@ -240,5 +340,9 @@ footer {
 
     .grid-container {
         grid-template-columns: 1fr;
+    }
+
+    .educations-grid{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
