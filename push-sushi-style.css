@@ -122,7 +122,7 @@ main {
     position: relative;
 }
 
-.head-gif img{
+.head-gif video{
     width: 100%;
     height: auto;
     border-radius: 10px;
