@@ -128,6 +128,13 @@ main {
     border-radius: 10px;
 }
 
+.head-gif video{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
 .head-gif-overlay{
     margin-bottom: 5px;
     background-color: rgba(0, 0, 0, 0.3); 
