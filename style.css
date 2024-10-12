@@ -167,6 +167,20 @@ main h2{
     filter: grayscale(100%);
 }
 
+.grid-item a{
+    color: #fff;
+}
+
+.grid-item h3, p {
+    margin: 0;
+    padding: 10px;
+}
+
+.grid-item h3 {
+    color: #e6e131;
+    font-size: x-large;
+}  
+
 .grid-item:hover .overlay{
     opacity: 1;
 }
@@ -185,53 +199,37 @@ main h2{
 }
 
 .overlay{
-    position: absolute; /* Posiziona il div sopra l'immagine */
-    top: 0; /* Allinea alla parte superiore del contenitore */
-    left: 0; /* Allinea alla parte sinistra del contenitore */
-    /* bottom: 0; */
-    width: 100%; /* Stessa larghezza dell'immagine */
-    /* height: 100%;  */
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
     bottom: 5px;
-    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero trasparente */
+    background-color: rgba(0, 0, 0, 0.8); 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    opacity: 0; /* Nasconde l'overlay di default */
-    transition: opacity 0.3s ease; /* Animazione della transizione */
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
 
-    display: flex; /* Abilita il layout in flexbox */
-    justify-content: center; /* Allinea gli elementi orizzontalmente */
+    display: flex; 
+    justify-content: center; 
     align-items: center;
 
 }
 
-.overlay img{
+.table-data {
+    display: flex; 
+    align-items: center;
+    height: 40px;
+}
+
+.table-data img{
     max-width: 25px;
-    max-height: 25px;
+    max-height: auto;
     margin-right: 10px;
+    padding-bottom: 5px;
 } 
 
-
-.grid-item img {
-    width: 100%;
-    padding: 0;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.grid-item a{
-    color: #fff;
-}
-
-.grid-item h3, p {
-    margin: 0;
-    padding: 10px;
-}
-
-.grid-item h3 {
-    color: #e6e131;
-    font-size: x-large;
-}   
+ 
 
 .educations-grid{
     display: grid;

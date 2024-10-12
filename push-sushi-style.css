@@ -168,11 +168,18 @@ main {
     max-width: 550px;
 }
 
-.top-grid-item img{
-    max-width: 25px;
-    max-height: 25px;
-    margin-right: 10px;
+.table-data {
+    display: flex; 
+    align-items: center;
+    height: 50px;
 }
+
+.table-data img{
+    max-width: 25px;
+    max-height: auto;
+    margin-right: 10px;
+    padding-bottom: 5px;
+} 
 
 .play-link{
     display: flex;
