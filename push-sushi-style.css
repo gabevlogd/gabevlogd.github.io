@@ -34,6 +34,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 130px;
     background-color: #212121;
     z-index: 1000;
 }
@@ -71,7 +72,7 @@ header {
     height: 40px;
     float: right;
     padding-top: 40px;
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 .header-content-links img:hover, .header-content-links img:focus, .header-content-links img:active{
@@ -83,13 +84,11 @@ header {
     height: 70px;
     float: left;
     margin-right: 10px;
-    /* padding-top: -10px; */
     margin-top: -4px;
 }
 
 .header-content-profile h2{
     padding-left: 80px;
-    /* margin-bottom: 50px; */
     transform: translateY(-25px);
     font-weight: 200;
 }
@@ -181,23 +180,23 @@ main {
     padding-bottom: 5px;
 } 
 
-.play-link{
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Allinea orizzontalmente */
+.bottom-link{
+    text-align: center;           
+    width: 100%; 
     padding-top: 60px;
-    /* padding-bottom: 60px; */
 }
 
-.play-link a{
+.bottom-link a{
+    display: inline-block;
     color: #e6e131;
     font-size: 200%;
     border: 2px solid #e6e131;
     padding: 10px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.play-link a:hover{
+.bottom-link a:hover{
     filter: grayscale(100%);
 }
 
@@ -246,6 +245,10 @@ footer {
 /*switch behaviour when scren size is under 700px*/
 @media screen and (max-width: 700px) {
 
+    header {
+        height: auto;
+    }
+
     .header-content {
         margin-top: 0px;
     }
@@ -293,5 +296,12 @@ footer {
 
     .top-grid-container{
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/*switch behaviour when scren size is under 370px*/
+@media screen and (max-width: 370px) {
+    .header-content h1{
+        font-size: 210%;
     }
 }
