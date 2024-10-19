@@ -112,6 +112,16 @@
                     </table>
                 </div>
             </div>
+
+            <div class="what-is-gamelab">
+                <h2>What Is Gamelab?</h2>
+                <p>
+                    GameLabs are collaborative workshops where students from all disciplines—Game Design, Game Programming, 3D Art, and 2D Art—form teams to create a game from scratch (create a remake of an existing game for first-year students). 
+                    These teams are given a set development time to complete and deliver a final product, including a pitch for a hypothetical publisher, simulating a real-world work environment.<br><br>
+                    Students are expected to self-organize and collaborate effectively to bring the game to completion. 
+                    The only "rule" is that they must use development management tools (such as Trello or Jira) to track and organize the entire creative process, and apply Git version control with proper GitFlow practices.
+                </p>
+            </div>
             
             <div class="personal-contribute">
                 <h2>Personal Contribute</h2>   
@@ -156,8 +166,70 @@
                                 All the items that give the player offensive and defensive abilities.
                             </span>
                         </li>
-                      </ul>
+                    </ul>
                 </p>
+            </div>
+
+            <div class="blueprint">
+                <h2>UE5 and Blueprints</h2>
+                <p>
+                    This was my first project in Unreal Engine, and consequently, my first time working with Blueprints. 
+                    After six months of using them, I’ve come to the conclusion that they are an extremely powerful tool, especially during the initial prototyping phase. 
+                    However, to achieve a clean, organized, and—most importantly—easily maintainable result over time, it’s essential to complement them with good old C++. 
+                    As projects grow in complexity, there's a serious risk of getting lost in a tangled mess of nodes that becomes increasingly difficult to manage.<br><br>
+
+                    The class shown below is the base class from which all controllable characters (including the little main drone) inherit.
+
+                    <ol>
+                        <li>Unreal Events<br>
+                            <span>
+                                Begin Play: Just a basic initialization of the pawn, caching some external references.<br>
+                            </span>
+                        </li>
+                        <li>Movement<br>
+                            <span>
+                                Input actions from Unreal Enhanced Input System for translation and rotation input.
+                            </span>
+                        </li>
+                        <li>Interactable Detection<br>
+                            <span>
+                                Begin/end ovelap component events for the detection of all interactables (interface) nears the player.
+                                Basically a simple sphere collider.
+                            </span>
+                        </li>
+                        <li>Damage <br>
+                            <span>
+                                Default Unreal's event for damage applying
+                            </span>
+                        </li>
+                        <li>Custom Events<br>
+                            <ul>
+                                <li>
+                                    TryPossessNewEntity: event for trying to control a new robot. empty because each character needs specific implementation. 
+                                </li>
+                                <li>
+                                    PossessNewEntity: Event for the actual transition to controlling a new robot, in Unreal terms, assigning a new pawn to the player controller.
+                                </li>
+                                <li>
+                                    PossessionStarted: Called on every robots when the player start to controlling them.
+                                </li>
+                                <li>
+                                    PossessionEnded: Called on every robots when the player stop to controlling them.
+                                </li>
+                                <li>
+                                    Respawn: Event used for respawning a robot.  
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Health Manager Events<br>
+                            <span>
+                                Callbacks from the custom actor component Health Manager, primarily used to trigger VFX associated with various events (damage, regeneration, etc.). 
+                                The actual health management is handled within the component's Blueprint.
+                            </span>
+                        </li>
+                    </ol>
+                </p>
+                <iframe src="https://blueprintue.com/render/nu_4_8g6/" scrolling="no" allowfullscreen></iframe>
             </div>
 
             <div class="bottom-link">

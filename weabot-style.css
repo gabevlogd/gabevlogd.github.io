@@ -10,6 +10,7 @@
 @font-face {
     font-family: 'Thin';
     src: url('font/Octarine-Light.otf') format('opentype');
+    /* src: url('font/JTUS.woff2') format('woff'); */
     font-weight: normal;
     font-style: normal;
 }
@@ -188,6 +189,60 @@ main {
     padding-bottom: 5px;
 } 
 
+.what-is-gamelab{
+    padding-top: 20px;
+}
+
+.what-is-gamelab h2{
+    font-size: xx-large
+}
+
+.personal-contribute{
+    padding-top: 20px;
+}
+
+.personal-contribute h2{
+    font-size: xx-large
+}
+
+.personal-contribute span{
+    color: #fff;
+    font-family: Thin;
+}
+
+.personal-contribute li{
+    padding-top: 10px;
+}
+
+.blueprint{
+    padding-top: 20px;
+}
+
+.blueprint h2{
+    font-size: xx-large
+}
+
+.blueprint ul{
+    color: #fff;
+    font-family: Thin;
+}
+
+.blueprint span{
+    color: #fff;
+    font-family: Thin;
+}
+
+.blueprint li{
+    padding-top: 10px;
+}
+
+.blueprint iframe{
+    width: 100%;
+    height: 500px;
+    border: 2px solid #e03a8d;
+    border-radius: 10px;
+}
+
 .bottom-link{
     text-align: center;           
     width: 100%; 
@@ -207,21 +262,6 @@ main {
 .bottom-link a:hover{
     filter: grayscale(100%);
 }
-
-.personal-contribute h2{
-    font-size: xx-large
-}
-
-.personal-contribute span{
-    color: #fff;
-    font-family: Thin;
-}
-
-.personal-contribute li{
-    padding-top: 10px;
-}
-
-
 
 footer {
     position: static;

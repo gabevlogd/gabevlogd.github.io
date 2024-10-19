@@ -180,6 +180,31 @@ main {
     padding-bottom: 5px;
 } 
 
+.what-is-gamelab{
+    padding-top: 30px;
+}
+
+.what-is-gamelab h2{
+    font-size: xx-large
+}
+
+.personal-contribute{
+    padding-top: 30px;
+}
+
+.personal-contribute h2{
+    font-size: xx-large
+}
+
+.personal-contribute span{
+    color: #fff;
+    font-family: Thin;
+}
+
+.personal-contribute li{
+    padding-top: 10px;
+}
+
 .bottom-link{
     text-align: center;           
     width: 100%; 
@@ -199,20 +224,6 @@ main {
 .bottom-link a:hover{
     filter: grayscale(100%);
 }
-
-.personal-contribute h2{
-    font-size: xx-large
-}
-
-.personal-contribute span{
-    color: #fff;
-    font-family: Thin;
-}
-
-.personal-contribute li{
-    padding-top: 10px;
-}
-
 
 
 footer {

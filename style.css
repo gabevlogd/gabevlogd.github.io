@@ -10,6 +10,7 @@
 @font-face {
     font-family: 'Thin';
     src: url('font/Octarine-Light.otf') format('opentype');
+    /* src: url('font/JTUS.woff2') format('woff'); */
     font-weight: normal;
     font-style: normal;
 }
