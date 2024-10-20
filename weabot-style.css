@@ -10,7 +10,6 @@
 @font-face {
     font-family: 'Thin';
     src: url('font/Octarine-Light.otf') format('opentype');
-    /* src: url('font/JTUS.woff2') format('woff'); */
     font-weight: normal;
     font-style: normal;
 }
@@ -23,7 +22,7 @@ body {
 }
 
 p{
-    font-family: Thin;
+    font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -40,60 +39,63 @@ header {
     z-index: 1000;
 }
 
-.header-content {
+.header-content{
+    display: flex;
     max-width: 1300px;
     margin: auto;
-    padding-left: 10px;
-    margin-top: 15px;
 }
 
-
-.header-content h1 {
-    color: #e03a8d;
-    font-size: 250%;
-}
-
-.header-content h2{
-    font-family: Thin;
-    color: #fff;
-}
-
-.header-content div{
-    float: left;
+.header-container-A {
+    display: flex;
     width: 70%;
+    height: 100%;
 }
 
-.header-content nav {
-    float: left;
+
+.header-container-A1{
+    height: 100%;
+}
+
+.header-container-A1 img{
+    width: 90px;
+    height: 90px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.header-container-A2{
+    padding-left: 10px;
+    height: 100%;
+}
+
+.header-container-A2 h1 {
+    padding-top: 4px;
+    font-size: 250%;
+    color: #e03a8d;
+}
+.header-container-A2 h2 {
+    transform: translateY(-30px);
+    font-size: 150%;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-weight: 200;
+}
+.header-container-B {
     width: 30%;
-}
-
-.header-content-links img {
-    width: 40px;
-    height: 40px;
-    float: right;
-    padding-top: 40px;
+    padding-top: 35px;
     padding-right: 10px;
 }
 
-.header-content-links img:hover, .header-content-links img:focus, .header-content-links img:active{
+.header-container-B img{
+    float: right;
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.header-container-B img:hover{
     filter: grayscale(100%);
-}
-
-.header-content-profile img{
-    width: 70px;
-    height: 70px;
-    float: left;
-    margin-right: 10px;
-    /* padding-top: -10px; */
-    margin-top: -4px;
-}
-
-.header-content-profile h2{
-    padding-left: 80px;
-    /* margin-bottom: 50px; */
-    transform: translateY(-25px);
-    font-weight: 200;
 }
     
 
@@ -207,7 +209,7 @@ main {
 
 .personal-contribute span{
     color: #fff;
-    font-family: Thin;
+    font-family: "Montserrat", sans-serif;
 }
 
 .personal-contribute li{
@@ -224,12 +226,12 @@ main {
 
 .blueprint ul{
     color: #fff;
-    font-family: Thin;
+    font-family: "Montserrat", sans-serif;
 }
 
 .blueprint span{
     color: #fff;
-    font-family: Thin;
+    font-family: "Montserrat", sans-serif;
 }
 
 .blueprint li{
@@ -276,7 +278,7 @@ footer {
     max-width: 1300px;
     height: 150px;
     margin: 0 auto;
-    font-family: Thin;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     justify-content: center;
 }
@@ -294,48 +296,48 @@ footer {
 @media screen and (max-width: 700px) {
 
     header {
-        height: auto;
+        height: 110px;
     }
 
-    .header-content {
-        margin-top: 0px;
+    .header-content{
+        display: contents;
     }
 
-    .header-content div, nav {
+    .header-container-A{
         width: 100%;
-        /* The width is 100%, when the viewport is 800px or smaller */
+        height: 50px;
+    }
+
+    .header-container-A1 img{
+        width: 70px;
+        height: 70px;
+        padding-top: 10px;
+    }
+
+    .header-container-A2 {
         font-size: 70%;
     }
 
-    .header-content div{
-        float: left;
+    .header-container-A2 h1{
+        padding-top: 1px;
     }
 
-    .header-content nav {
-        float: right;
-    }
-
-    .header-content-profile img{
-        margin-top: -10px;
-    }
-
-    .header-content-profile h2{
-        padding-left: 80px;
+    .header-container-A2 h2{
         transform: translateY(-20px);
-        font-weight: 200;
+        font-weight: lighter;
     }
 
-    .header-content-links{
-        height: 20px;
-        min-width: 150px; /*avoid logos exceed the page on the right */
-        transform: translateY(-50px);
-        margin-bottom: 10px;
+    .header-container-B{
+        float: right;
+        height: 30px;
+        padding-top: 0px;
+        min-width: 150px;
     }
 
-    .header-content-links img {
+    .header-container-B img{
         width: 30px;
         height: 30px;
-        margin-bottom: auto;
+        padding-top: 20px;
     }
 
     .head-gif-overlay h1{
@@ -351,5 +353,11 @@ footer {
 @media screen and (max-width: 370px) {
     .header-content h1{
         font-size: 210%;
+        padding-top: 5px;
+    }
+
+    .header-container-A1 img{
+        width: 60px;
+        height: 60px;
     }
 }
