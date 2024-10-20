@@ -210,6 +210,18 @@ main {
     padding-top: 10px;
 }
 
+.game {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    padding-top: 30px;
+}
+
+.game iframe{
+    border: 2px solid #e6e131;
+    border-radius: 10px;
+}
+
 .bottom-link{
     text-align: center;           
     width: 100%; 
