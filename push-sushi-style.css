@@ -194,7 +194,7 @@ main {
 }
 
 .personal-contribute{
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .personal-contribute h2{
@@ -210,22 +210,64 @@ main {
     padding-top: 10px;
 }
 
+.tool-programming{
+    padding-top: 20px;
+}
+.tool-programming video{ 
+    display: block;    /* Assicura che il video sia trattato come un elemento block */
+    margin: 0 auto;    /* Centra il video orizzontalmente */
+    max-width: 60%;
+    border-radius: 10px;
+}
+.tool-programming h2{
+    font-size: smaller;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+.tool-programming span{
+    font-family: "Montserrat", sans-serif;
+}
+.tool-programming li{
+    padding-bottom: 10px;
+}
+
+#pcOnly{
+    display: none;
+}
+#mobileOnly{
+    display: none;
+}
+
+#loading{
+    text-align: center;
+    transform: translateY(400px);
+}
 .game {
-    display: flex;
     justify-content: center;  
     align-items: center;  
     padding-top: 30px;
 }
 
-.game iframe{
+.game iframe, .game h1{
     border: 2px solid #e6e131;
     border-radius: 10px;
+}
+.game iframe{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.game h1{
+    text-align: center;
+    max-width: 300px;
+    padding: 50px;
+    margin-bottom: 10px;
 }
 
 .bottom-link{
     text-align: center;           
     width: 100%; 
-    padding-top: 60px;
+    /* padding-top: 60px; */
 }
 
 .bottom-link a{
@@ -324,6 +366,10 @@ footer {
 
     .top-grid-container{
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .tool-programming video{
+        max-width: 100%;
     }
 }
 

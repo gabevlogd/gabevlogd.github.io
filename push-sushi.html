@@ -166,19 +166,71 @@
                     </ul>
                 </p>
             </div>
+            
 
+            <div class="tool-programming">
+                <h1>Tool Programming</h1>
+                <p>
+                    In this project, I put into practice for the first time what I had just learned about creating tools in Unity. 
+                    The goal was to build a level editor tool to speed up the game's level creation process. 
+                    The outcome was very successful, as the designer was able to create 30 levels in about a week.  
+                </p>
+                
+                <p>
+                    The tool functionality are:
+                    <ul>
+                        <li>New Level: <span>automatically opens a new scene with an empty grid ready to be filled</span></li>
+                        <li>Save Level: <span>automatically creates a Scriptable Object, with the current grid configuration, Used for the runtime loading of different levels within the same Unity scene.</span></li>
+                        <li>Pawns Positioning: <span>to fill the grid just select the wanted pawns from the mesh list, select the coordinates on the toogles' grid, click "place pawn" to position the selected pawn and "back" to undo the last positioning.</span></li>
+                    </ul>
+                </p>
+                <video autoplay muted loop playsinline>
+                    <source src="video/PushSushiTool.mp4" type="video/mp4">
+                </video>
+                <h2>Level editor tool usage example</h2>
+            </div>
+            
+            
+            <h1><br>Try WebGL Version</h1>
             <!-- https://html-classic.itch.zone/html/11775149/index.html  Itch.io iframe embed link -->
             <!-- https://play.unity.com/api/v1/games/game/c3203041-aebc-4047-8094-fec25c606fd7/build/latest/frame Unity Play iframe embed link-->
-
-            <div class="game">
+            <h2 id="loading" style="display: none;">Loading...</h2>
+            <div class="game" id="pcOnly">
                 <iframe 
+                    id="gameIframe"
                     src="https://play.unity.com/api/v1/games/game/c3203041-aebc-4047-8094-fec25c606fd7/build/latest/frame"
                     width="360"
                     height="800"
-                    frameborder="0"
                     scrolling="no">
                 </iframe>
-            </div>   
+            </div> 
+            <div class="game" id="mobileOnly">
+                <h1>Switch to a PC to try the web version of the game, or download the APK with the button below if you are on Android</h1>
+            </div>
+            <script>
+                // Funzione per controllare se è un dispositivo mobile
+                function isMobile() {
+                    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+                    // Controlliamo la presenza di parole chiave comuni per i dispositivi mobili
+                    return /android|iphone|ipad|iPod|windows phone|blackberry/i.test(userAgent);
+                }
+
+                function hideLoading(){
+                    setTimeout(function() {
+                        document.getElementById('loading').style.display = 'none';
+                    }, 5000);  
+                }
+
+                if (isMobile()) {
+                    document.getElementById("mobileOnly").style.display = "flex";
+                }
+                else{
+                    document.getElementById("pcOnly").style.display = "flex";
+                    document.getElementById('loading').style.display = "block";
+                    document.getElementById("gameIframe").onload = hideLoading;
+                }
+            </script>  
             
 
             <div class="bottom-link">
