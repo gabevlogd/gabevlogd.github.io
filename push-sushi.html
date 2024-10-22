@@ -192,13 +192,11 @@
             
             
             <h1><br>Try WebGL Version</h1>
-            <!-- https://html-classic.itch.zone/html/11775149/index.html  Itch.io iframe embed link -->
-            <!-- https://play.unity.com/api/v1/games/game/c3203041-aebc-4047-8094-fec25c606fd7/build/latest/frame Unity Play iframe embed link-->
+            
             <h2 id="loading" style="display: none;">Loading...</h2>
             <div class="game" id="pcOnly">
                 <iframe 
                     id="gameIframe"
-                    src="https://play.unity.com/api/v1/games/game/c3203041-aebc-4047-8094-fec25c606fd7/build/latest/frame"
                     width="360"
                     height="800"
                     scrolling="no">
@@ -229,8 +227,11 @@
                     document.getElementById("pcOnly").style.display = "flex";
                     document.getElementById('loading').style.display = "block";
                     document.getElementById("gameIframe").onload = hideLoading;
+                    document.getElementById("gameIframe").src = "https://play.unity.com/api/v1/games/game/c3203041-aebc-4047-8094-fec25c606fd7/build/latest/frame";
                 }
-            </script>  
+            </script>
+            <!-- https://html-classic.itch.zone/html/11775149/index.html  Itch.io iframe embed link -->
+            <!-- https://play.unity.com/api/v1/games/game/c3203041-aebc-4047-8094-fec25c606fd7/build/latest/frame Unity Play iframe embed link-->  
             
 
             <div class="bottom-link">
