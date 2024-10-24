@@ -1,0 +1,393 @@
+/* styles.css */
+
+@font-face {
+    font-family: 'Heavy';
+    src: url('font/Octarine-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Thin';
+    src: url('font/Octarine-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: Heavy, sans-serif;
+    background-color: #212121;
+    color: #fff;
+}
+
+p{
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+pre {
+    background-color: #2e2e2e !important;
+    padding: 10px;
+    /* border: 1px solid #e03a8d; */
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+code {
+    padding: 2px 4px;
+    border-radius: 3px;
+    text-shadow: none !important;
+    color:#ffffff !important;
+}
+
+.line-numbers {
+    border: 1px solid #e03a8d;
+    border-left: 10px solid #e03a8d;
+    color: #f50000;
+}
+
+.line-numbers-rows{
+    color: #e6e131 !important;
+}
+
+
+.token.punctuation, .token.operator {
+    background-color: transparent !important; 
+    color: #e03a8d7a !important;
+}
+.token.comment{
+    color: #e6e131 !important;
+}
+
+.token.function{
+    color: #e03a8d !important;
+}
+
+.token.string {
+    color: #e6e131 !important;
+}
+
+.token.number {
+    color: white !important;
+}
+
+.token.keyword{
+    color:#ff0080 !important;
+}
+
+.token.constant{
+    color: white !important;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    background-color: #212121;
+    z-index: 1000;
+}
+
+.header-content{
+    display: flex;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.header-container-A {
+    display: flex;
+    width: 70%;
+    height: 100%;
+}
+
+
+.header-container-A1{
+    height: 100%;
+}
+
+.header-container-A1 img{
+    width: 90px;
+    height: 90px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.header-container-A2{
+    padding-left: 10px;
+    height: 100%;
+}
+
+.header-container-A2 h1 {
+    padding-top: 4px;
+    font-size: 250%;
+    color: #e03a8d;
+}
+.header-container-A2 h2 {
+    transform: translateY(-30px);
+    font-size: 150%;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-weight: 200;
+}
+.header-container-B {
+    width: 30%;
+    padding-top: 35px;
+    padding-right: 10px;
+}
+
+.header-container-B img{
+    float: right;
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.header-container-B img:hover{
+    filter: grayscale(100%);
+}
+    
+
+main {
+    margin-top: 160px;
+    padding-bottom: 50px;  
+}
+
+
+
+.main-content {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.back {
+    color: #e6e131;
+    max-width: 90px;
+    font-size: x-large;
+}
+
+.back:hover{
+    filter: grayscale(100%);
+}
+
+.head-gif{
+    margin-top: 10px;
+    position: relative;
+}
+
+.head-gif video{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.head-gif-overlay{
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.3); 
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    width: 100%; 
+    height: 50px;
+    display: flex; /* Abilita Flexbox */
+    align-items: center; /* Allinea verticalmente */
+    border-radius: 10px;
+}
+
+.head-gif-overlay h1{
+    padding-left: 10px;
+    color: #e6e131
+}
+
+.top-grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.top-grid-item{
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.top-grid-item li{
+    font-family: "Montserrat", sans-serif;
+}
+
+.top-grid-item p{
+    padding-top: 18px;
+    font-size: large;
+    max-width: 550px;
+}
+
+.table-data {
+    display: flex; 
+    align-items: center;
+    height: 50px;
+}
+
+.table-data img{
+    max-width: 25px;
+    max-height: auto;
+    margin-right: 10px;
+    padding-bottom: 5px;
+} 
+
+.positioning{
+    padding-top: 30px;
+}
+.positioning img{ 
+    display: block;   
+    margin: 0 auto; 
+    padding-bottom: 30px; 
+}
+
+.positioning p{
+    padding-bottom: 30px;
+}
+
+.snapping{
+    padding-top: 30px;
+}
+.snapping p{
+    padding-bottom: 30px;
+}
+
+.code{
+    overflow-x: auto;
+}
+
+.code h2{
+    font-size: xx-large
+}
+
+.bottom-link{
+    text-align: center;           
+    width: 100%; 
+    padding-top: 60px;
+}
+
+.bottom-link a{
+    display: inline-block;
+    color: #e6e131;
+    font-size: 200%;
+    border: 2px solid #e6e131;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.bottom-link a:hover{
+    filter: grayscale(100%);
+}
+
+footer {
+    position: static;
+    top: 100%;
+    left: 0;
+    height: 200px;
+    background-color: #e03a8d;
+}
+
+.footer-content {
+    display: flex;
+    max-width: 1300px;
+    height: 150px;
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-content a{
+    text-decoration: underline;
+    color:#fff
+}
+
+.footer-content h5{
+    margin-top: 130px;
+}
+
+/*switch behaviour when scren size is under 700px*/
+@media screen and (max-width: 700px) {
+
+    header {
+        height: 110px;
+    }
+
+    .header-content{
+        display: contents;
+    }
+
+    .header-container-A{
+        width: 100%;
+        height: 50px;
+    }
+
+    .header-container-A1 img{
+        width: 70px;
+        height: 70px;
+        padding-top: 10px;
+    }
+
+    .header-container-A2 {
+        font-size: 70%;
+    }
+
+    .header-container-A2 h1{
+        padding-top: 1px;
+    }
+
+    .header-container-A2 h2{
+        transform: translateY(-20px);
+        font-weight: lighter;
+    }
+
+    .header-container-B{
+        float: right;
+        height: 30px;
+        padding-top: 0px;
+        min-width: 150px;
+    }
+
+    .header-container-B img{
+        width: 30px;
+        height: 30px;
+        padding-top: 20px;
+    }
+
+    .head-gif-overlay h1{
+        font-size: 140%;
+    }
+
+    .top-grid-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .positioning img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*switch behaviour when scren size is under 370px*/
+@media screen and (max-width: 370px) {
+    .header-content h1{
+        font-size: 210%;
+        padding-top: 5px;
+    }
+
+    .header-container-A1 img{
+        width: 60px;
+        height: 60px;
+    }
+}

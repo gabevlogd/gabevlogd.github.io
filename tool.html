@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriele Garofalo | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="tool.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-container-A">
+                <a href="index.html"><div class="header-container-A1"> <img src="/images/logos/GVLogo.png" alt="github"> </div> </a>
+                <a href="index.html"> <div class="header-container-A2"> <h1>Gabriele Garofalo</h1> <h2>Game Programmer</h2> </div> </a>
+            </div>
+            <nav class="header-container-B">
+                <a href="https://www.instagram.com/gabevlogd/" target="_blank"> <img src="/images/logos/InstagramLogo.png" alt="instagram"> </a>
+                <a href="https://www.linkedin.com/in/gabriele-garofalo-8517a8291/" target="_blank"> <img src="/images/logos/LinkedinLogo.png" alt="linkedin"></a>
+                <a href="https://github.com/gabevlogd" target="_blank"> <img src="/images/logos/GithubLogo.png" alt="github"></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <a class="back" href="index.html">
+                < Home
+            </a>
+            <div class="head-gif">
+                <video autoplay muted loop playsinline>
+                    <source src="video/Level Editor Tool.mp4" type="video/mp4">
+                </video> 
+                <div class="head-gif-overlay">
+                    <h1>Tool Programming</h1>
+                </div> 
+            </div>
+            <div class="top-grid-container">
+                <div class="top-grid-item">
+                    <h2>About</h2>
+                    <p>
+                        Here's my assignment for the end of the Tool Programming on Unity module.
+                        Assignment characteristics: 
+                        <br><br>Create a level editor tool with the following features:
+                        <ul>
+                            <li>Interface from which to select the prefab</li>
+                            <li>Preview of the prefab in the game viewport, following the mouse cursor</li>
+                            <li>Ability to rotate the preview of the selected prefab by 90 degrees at a time</li>
+                            <li>Spawning and snapping of the prefab at the entrance of the wall it is aligned with</li>
+                            <li>Undo system</li>
+                        </ul>
+                    </p>   
+                </div>
+                <div class="top-grid-item">
+                    <h2>Project Info</h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="table-data">
+                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="table-data">
+                                    <h4>Team Size: 1</h4>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="table-data">
+                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="table-data">
+                                    <h4>Time Frame: 1 week</h4>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="table-data">
+                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="table-data">
+                                    <h4>Engine: Unity</h4>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="positioning">
+                <h2>Preview's Positioning in 3D Space</h2>
+                <p>
+                    The prefab preview needs to follow the mouse, so to calculate this position, it's fairly straightforward to understand that a raycast is required.<br> 
+                    This raycast originates from the camera's position and is directed toward the mouse pointer (a function already provided by Unity).<br> 
+                    Now that we have the direction, the key is determining at what distance from the camera the intersection point with the terrain lies along this path.<br><br>
+                    The first idea, which I initially implemented, was to spawn an invisible plane and simply get the exact point by detecting where the raycast hits.<br> 
+                    This works, but it's not a very elegant solution.
+                </p>
+                <img src="images/tool.png" alt="img">
+                <p>
+                    If we think about the problem for a moment, it's not too difficult to realize that the camera's position and the point we want to calculate are the two vertices of the acute angles in a right triangle. 
+                    Therefore, the distance we need to calculate is simply the hypotenuse of this triangle.<br>
+                    Once this is understood, the solution becomes straightforward, as trigonometry tells us that:<br><br>
+                    hypotenuse = Cam.position.y / cos(α), where cos(α) = Cam.downward • Raycast.direction.
+                </p>
+                <pre class="line-numbers"><code class="language-javascript">private void UpdatePreviewPosition()
+{
+    Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+    if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("SnapPoint") && _enablePreviewSnapping)
+    {
+        TrySnapPreviewPosition(hit, ray);
+    }
+    else
+    {
+        _previewPosition = CalculatePreviewPosition(ray);
+    }           
+}               </code></pre>
+                <pre class="line-numbers"><code class="language-javascript">/// Calculate where to locate the preview in the 3D world space based on the camera and mouse pointer position
+/// param name="ray" ray that starts from the camera position and go through the mouse pointer
+private Vector3 CalculatePreviewPosition(Ray ray)
+{
+    // H = Y / D  where H = hypotenuse , Y = cathetus ,  D = Cos(angle between Y and H)
+    float hypotenuse = ray.origin.y / Vector3.Dot(Vector3.down, ray.direction);
+    return ray.origin + ray.direction * hypotenuse + Vector3.up * _spawnPositionHeight;
+}               </code></pre>
+            </div>
+            
+            <div class="snapping">
+                <h2>Preview Snapping</h2> 
+                <p>
+                    The reasoning I followed for this feature is as follows:<br><br>
+                    Each prefab is a SnappableObject, which has a list of snap points (i.e., a list of Transforms), each accompanied by a collider. 
+                    We define the direction from the center of a SnappableObject to one of its snap points as Dn.<br><br>
+                    This means that if a SnappableObject has four snap points, we can calculate D1, D2, D3, and D4.<br><br>
+                    Based on this definition, we can say that two snap points from two different SnappableObjects (Dx and Dy) are aligned if the dot product between them equals 1.
+                </p>
+                <pre class="line-numbers"><code class="language-javascript">private void TrySnapPreviewPosition(RaycastHit snapPoint, Ray ray)
+{
+    _selectedObject.TryGetComponent(out SnappableObject snappableObject);
+                
+    //this vector is a direction that goes from the center of the snappableObject
+    //present in the scene to its snap point (door) currently inspected by the mouse pointer
+    Vector3 direction = snapPoint.transform.parent.rotation * snapPoint.transform.localPosition.normalized;
+                
+    //(if doors are aligned)
+    if (CanSnap(direction, snappableObject))
+    {
+        _previewPosition = snapPoint.transform.position;
+    }
+    else
+    {
+        _previewPosition = CalculatePreviewPosition(ray);
+    }
+}               </code></pre> 
+                <pre class="line-numbers"><code class="language-javascript">private bool CanSnap(Vector3 snapDirection, SnappableObject snappableObj)
+{
+    foreach(Transform trs in snappableObj.SnapPoint)
+    {
+        if (Vector3.Dot(snapDirection, _previewRotation * trs.localPosition.normalized) < -0.9f)
+            return true;
+    }
+    return false;
+}               </code></pre>  
+            </div>
+            <div class="bottom-link">
+                <a href="https://github.com/gabevlogd/LevelEditorTool" target="_blank">Repository</a>
+            </div> 
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h5>Web page layout inspiration from <a href="https://tomaswallin.se/#/" target="_blank">Tomas Wallin</a>
+                <br><br>gabrielegarofalo999@gmail.com</h5>
+        </div>
+    </footer>
+</body>
+
+</html>

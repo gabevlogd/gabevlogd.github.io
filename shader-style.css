@@ -236,26 +236,6 @@ main {
     max-height: auto;
     margin-right: 10px;
     padding-bottom: 5px;
-} 
-
-.play-link{
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Allinea orizzontalmente */
-    padding-top: 60px;
-    /* padding-bottom: 60px; */
-}
-
-.play-link a{
-    color: #e6e131;
-    font-size: 200%;
-    border: 2px solid #e6e131;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.play-link a:hover{
-    filter: grayscale(100%);
 }
 
 .code{
