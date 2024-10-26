@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriele Garofalo | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sandwich.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-container-A">
+                <a href="index.html"><div class="header-container-A1"> <img src="/images/logos/GVLogo.png" alt="github"> </div> </a>
+                <a href="index.html"> <div class="header-container-A2"> <h1>Gabriele Garofalo</h1> <h2>Game Programmer</h2> </div> </a>
+            </div>
+            <nav class="header-container-B">
+                <a href="https://www.instagram.com/gabevlogd/" target="_blank"> <img src="/images/logos/InstagramLogo.png" alt="instagram"> </a>
+                <a href="https://www.linkedin.com/in/gabriele-garofalo-8517a8291/" target="_blank"> <img src="/images/logos/LinkedinLogo.png" alt="linkedin"></a>
+                <a href="https://github.com/gabevlogd" target="_blank"> <img src="/images/logos/GithubLogo.png" alt="github"></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <a class="back" href="index.html">
+                < Home
+            </a>
+            <div class="head-gif">
+                <video autoplay muted loop playsinline>
+                    <source src="video/Sandwich!.mp4" type="video/mp4">
+                </video> 
+                <div class="head-gif-overlay">
+                    <h1>Sandwich!</h1>
+                </div> 
+            </div>
+            <div class="top-grid-container">
+                <div class="top-grid-item">
+                    <h2>About</h2>
+                    <p>
+                        Here's my assignment for the end of the Mobile Development module.<br>
+                        Assignment characteristics:<br>
+                        Recreate the original mobile game Sandwich!.<br><br>
+                        Sandwich! is a casual mobile puzzle game where players stack ingredients to create sandwiches.<br>
+                        The goal is to fold different layers of ingredients in the correct sequence, stacking everything from cheese to vegetables and meats, until a complete sandwich is made.<br> 
+                        Simple swipe controls make it easy to fold the ingredients over each other, but careful planning is required to avoid mistakes.
+                    </p>   
+                </div>
+                <div class="top-grid-item">
+                    <h2>Project Info</h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="table-data">
+                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="table-data">
+                                    <h4>Team Size: 1</h4>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="table-data">
+                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="table-data">
+                                    <h4>Time Frame: 1 weeks</h4>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="table-data">
+                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="table-data">
+                                    <h4>Engine: Unity</h4>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="table-data">
+                                    <img src="/images/icons/PlatformIcon.png" alt="platform icon">
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="table-data">
+                                    <h4>Platform: Android</h4>
+                                </div>    
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="game-loop">
+                <h2>Game Loop</h2>
+                <p>
+                    <ol>
+                        <li>The <Span>GameManager</span> initially loads the <span>PauseState</span>, within which it waits for the player's input to start the game. Additionally, at the game's start (in the Start of <span>LevelLoader</span>), the first level is already instantiated.</li>
+                        <li>Once the player provides the input to start the game, the state transitions to <span>PlayState</span>.</li>
+                        <li>Entering <span>PlayState</span> enables the <span>SwipesManager</span>, which handles reading player input to move various elements on the game grid.</li>
+                        <li>For each valid move made, the win condition is checked; if satisfied, the state changes to <span>WinState</span>.</li>
+                        <li>Entering <spam>WinState</spam> disables the <span>SwipesManager</span> and waits for the player to input a command to proceed to the next level.</li>
+                        <li>Once the player inputs the command to advance to the next level, it returns to <span>PlayState</span>.</li>
+                        <li>Upon exiting <span>WinState</span>, the <span>LoadNextLevel</span> event is triggered. In this event, the <span>LevelLoader</span> loads the new level (using <span>LevelGenerator</span> to generate random levels whenever it's triggered), and all elements of the previous level's grid self-destruct.</li>
+                    </ol>
+                    Communication between the various classes is primarily managed through <span>static event Actions</span>.
+                </p> 
+            </div>
+
+            <div class="animation">
+                <h2>Stack Animation</h2>
+                <p>
+                    Definition: <span>from</span> = stack to be rotated (<span>Target Stack</span>);<br>
+                    Definition: <span>to</span> = stack that receives <span>from</span>.<br>
+                    Definition: <span>stackCount</span> = height of the stack.<br><br>
+
+                    There are three possible animation cases for a Stack:
+                    <ul>
+                        <li>stackCount_from == stackCount_to;</li>
+                        <li>stackCount_from < stackCount_to;</li>
+                        <li>stackCount_from > stackCount_to.</li>
+                    </ul>
+                    Graphic illustration of the three cases mentioned above:
+                </p> 
+                <img src="images/stack-animation.png" alt="img">
+                <p>
+                    The <span>StacksAnimator</span> is the class responsible for calculating the <span>Starting Point</span>, <span>Ending Point</span>, and <span>Rotation Pivot</span>, and performing the movement of the <span>Target Stack</span> using a classic <span>state pattern</span> after calculating the necessary data.
+                </p>    
+            </div>
+            
+            <h1><br>Try WebGL Version</h1>
+            
+            <h2 id="loading" style="display: none;">Loading...</h2>
+            <div class="game" id="pcOnly">
+                <iframe 
+                    id="gameIframe"
+                    width="360"
+                    height="800"
+                    scrolling="no">
+                </iframe>
+            </div> 
+            <div class="game" id="mobileOnly">
+                <h1>Switch to a PC to try the web version of the game, or download the APK with the button below if you are on Android</h1>
+            </div>
+            <script>
+                // Funzione per controllare se è un dispositivo mobile
+                function isMobile() {
+                    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+                    // Controlliamo la presenza di parole chiave comuni per i dispositivi mobili
+                    return /android|iphone|ipad|iPod|windows phone|blackberry/i.test(userAgent);
+                }
+
+                function hideLoading(){
+                    setTimeout(function() {
+                        document.getElementById('loading').style.display = 'none';
+                    }, 3000);  
+                }
+
+                if (isMobile()) {
+                    document.getElementById("mobileOnly").style.display = "flex";
+                }
+                else{
+                    document.getElementById("pcOnly").style.display = "flex";
+                    document.getElementById('loading').style.display = "block";
+                    document.getElementById("gameIframe").onload = hideLoading;
+                    document.getElementById("gameIframe").src = "https://play.unity.com/api/v1/games/game/d7e04832-497b-4d3a-972c-b41cfd5b226f/build/latest/frame?access_token=C4JayNy_gcDnYK-srNbqaEp75-xnJ0LSYxL1uydFvKU012f";
+                }
+            </script>
+            
+
+            <div class="bottom-link">
+                <a href="https://github.com/gabevlogd/SandwichRemake/releases/download/v1.0.0/SandwichRemake-v1.0.0.apk">Download</a>
+                <a href="https://github.com/gabevlogd/SandwichRemake" target="_blank">Repository</a>
+            </div> 
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h5>Web page layout inspiration from <a href="https://tomaswallin.se/#/" target="_blank">Tomas Wallin</a>
+                <br><br>gabrielegarofalo999@gmail.com</h5>
+        </div>
+    </footer>
+</body>
+
+</html>

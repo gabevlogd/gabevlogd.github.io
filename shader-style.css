@@ -56,7 +56,7 @@ code {
 
 .token.punctuation, .token.operator {
     background-color: transparent !important; 
-    color: #e03a8d7a !important;
+    color: #fff !important;
 }
 .token.comment{
     color: #e6e131 !important;
@@ -75,7 +75,7 @@ code {
 }
 
 .token.keyword{
-    color:#ff0080 !important;
+    color:#ff6ab5 !important;
 }
 
 .token.constant{

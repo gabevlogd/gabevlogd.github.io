@@ -29,58 +29,6 @@ a {
     text-decoration: none;
 }
 
-pre {
-    background-color: #2e2e2e !important;
-    padding: 10px;
-    /* border: 1px solid #e03a8d; */
-    border-radius: 5px;
-    font-family: 'Courier New', Courier, monospace;
-}
-code {
-    padding: 2px 4px;
-    border-radius: 3px;
-    text-shadow: none !important;
-    color:#ffffff !important;
-}
-
-.line-numbers {
-    border: 1px solid #e03a8d;
-    border-left: 10px solid #e03a8d;
-}
-
-.line-numbers-rows{
-    color: #e6e131 !important;
-}
-
-
-.token.punctuation, .token.operator {
-    background-color: transparent !important; 
-    color: #fff !important;
-}
-.token.comment{
-    color: #e6e131 !important;
-}
-
-.token.function{
-    color: #e03a8d !important;
-}
-
-.token.string {
-    color: #e6e131 !important;
-}
-
-.token.number {
-    color: white !important;
-}
-
-.token.keyword{
-    color:#ff6ab5 !important;
-}
-
-.token.constant{
-    color: white !important;
-}
-
 header {
     position: fixed;
     top: 0;
@@ -218,10 +166,6 @@ main {
     padding-bottom: 10px;
 }
 
-.top-grid-item li{
-    font-family: "Montserrat", sans-serif;
-}
-
 .top-grid-item p{
     padding-top: 18px;
     font-size: large;
@@ -241,38 +185,73 @@ main {
     padding-bottom: 5px;
 } 
 
-.positioning{
+.game-loop{
     padding-top: 30px;
+    font-family: "Montserrat", sans-serif;
 }
-.positioning img{ 
+.game-loop li{
+    padding-bottom: 10px;
+}
+.game-loop span{
+    font-weight: 700;
+}
+
+.animation{
+    padding-top: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+.animation li{
+    padding-bottom: 10px;
+}
+.animation span{
+    font-weight: 700;
+}
+.animation img{
+    max-width: 700px;
+    height: auto;
     display: block;   
-    margin: 0 auto; 
-    padding-bottom: 30px; 
-}
-
-.positioning p{
+    margin: 0 auto;
+    padding-top: 30px;
     padding-bottom: 30px;
+
 }
 
-.snapping{
+#pcOnly{
+    display: none;
+}
+#mobileOnly{
+    display: none;
+}
+
+#loading{
+    text-align: center;
+    transform: translateY(400px);
+}
+.game {
+    justify-content: center;  
+    align-items: center;  
     padding-top: 30px;
 }
-.snapping p{
-    padding-bottom: 30px;
-}
 
-.code{
-    overflow-x: auto;
+.game iframe, .game h1{
+    border: 2px solid #e6e131;
+    border-radius: 10px;
 }
-
-.code h2{
-    font-size: xx-large
+.game iframe{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.game h1{
+    text-align: center;
+    max-width: 300px;
+    padding: 50px;
+    margin-bottom: 10px;
 }
 
 .bottom-link{
     text-align: center;           
     width: 100%; 
-    padding-top: 60px;
+    /* padding-top: 60px; */
 }
 
 .bottom-link a{
@@ -288,6 +267,7 @@ main {
 .bottom-link a:hover{
     filter: grayscale(100%);
 }
+
 
 footer {
     position: static;
@@ -372,7 +352,7 @@ footer {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .positioning img{
+    .animation img{
         width: 100%;
         height: auto;
     }
