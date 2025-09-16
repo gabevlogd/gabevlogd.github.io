@@ -191,6 +191,24 @@ main {
     padding-bottom: 5px;
 } 
 
+.UML{
+    padding-top: 30px;
+}
+
+.UML h2{
+    font-size: xx-large
+}
+
+.UML img{ 
+    display: block;   
+    margin: 0 auto; 
+    padding-bottom: 30px; 
+}
+
+.UML p{
+    padding-bottom: 30px;
+}
+
 .doc{
     padding-top: 20px;
 }
@@ -300,6 +318,11 @@ footer {
 
     .top-grid-container{
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .UML img{
+        width: 100%;
+        height: auto;
     }
 }
 
