@@ -208,6 +208,18 @@ main {
     margin-bottom: 10px;
 }
 
+.bottom-link a img{
+    display: inline-block;
+    padding-top: 9px;
+}
+
+.bottom-link a h3{
+    display: inline-block;
+    padding-left: 10px;
+    margin: 0px;
+    transform: translateY(-10px);
+}
+
 .bottom-link a:hover{
     filter: grayscale(100%);
 }
