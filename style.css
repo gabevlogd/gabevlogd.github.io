@@ -139,6 +139,10 @@ main h2{
 }
 
 .resume a{
+    margin: 0 10px;
+}
+
+.resume a{
     color: #e6e131;
     font-size: x-large;
     border: 2px solid #e6e131;
