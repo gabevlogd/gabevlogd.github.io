@@ -1,0 +1,296 @@
+[
+  {
+    "id": "negative-edge",
+    "legacyPage": "projectBW.html",
+    "title": "Negative Edge",
+    "description": "Project currently under development: Third Person Shooter Arena.",
+    "media": {
+      "type": "video",
+      "src": "video/ProjectBW.mp4"
+    },
+    "meta": {
+      "teamSize": "9",
+      "timeFrame": "In progress",
+      "engine": "Unreal Engine 5",
+      "platform": "Windows"
+    },
+    "aboutHtml": "<p>The Negative Edge is a third-person arena shooter fast-paced, in which the player ventures into dystopian black-and-white-hued arenas in which he will face monstrous creatures in desperation to complete his mission to save planet Earth.\n                    <br><br>Developed as a vertical slice by a team of 9 developers.\n                    My primary role was the 3C programmer, ensuring responsive controls, fluid gameplay, and a camera system that adapts to both player input and game context. I also handled the main character’s animation integration, bridging movement mechanics with visual feedback to enhance immersion.\n                    </p>",
+    "links": [
+      {
+        "label": "View on Itch.io",
+        "url": "https://eventhorizonschool.itch.io/the-negative-edge"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Development Focus",
+        "html": "<p>\n                    From the beginning, my goal was to deliver a highly responsive and intuitive player experience, where movement, camera, and controls feel seamlessly connected.\n                    To achieve this, I designed all core gameplay features as independent Unreal Engine plugins, making them modular, reusable, and easy to integrate into future projects.\n                </p>"
+      },
+      {
+        "title": "C++ Systems Developed",
+        "html": "<p>\n</p><ul>\n<li>Aim Assist System: \n                            <span>\n                                Context-aware targeting assistance for improved aiming accuracy with gamepad.   \n                            </span>\n</li>\n<li>Custom Movement System:\n                            <span> \n                                Unreal Character Movement Component extension.\n                            </span>\n</li>\n<li>Dynamic Camera System:\n                            <span>\n                                Adaptive camera behavior with smooth transitions based on player actions.\n                            </span>\n</li>\n<li>Environmental Scanner System: \n                            <span>\n                                Detects and reacts to surrounding objects, surfaces, and interactable elements.\n                            </span>\n</li>\n<li>Global Events System:\n                            <span> \n                                Centralized event broadcasting and listening for efficient game-wide communication.\n                            </span>\n</li>\n<li>Grappling Hook System:\n                            <span> \n                                Physics-driven grappling mechanic with smooth movement transitions.\n                            </span>\n</li>\n<li>Input Mapping System:\n                            <span> \n                                Flexible input mapping system for easy reconfiguration.\n                            </span>\n</li>\n<li>Interaction System:\n                            <span> \n                                Context-based interaction with world objects and entities.\n                            </span>\n</li>\n<li>Pop-Up System:\n                            <span> \n                                Modular UI pop-ups and notifications.\n                            </span>\n</li>\n<li>Resource Attribute System:\n                            <span> \n                                Modular stat and resource management (e.g., health, stamina).\n                            </span>\n</li>\n<li><a href=\"project.html?id=state-machine-system\">State Machine System:</a>\n<span> \n                                Structured actor state handling for consistent behavior.\n                            </span>\n</li>\n</ul>\n<p></p>"
+      },
+      {
+        "title": "Results & Takeaways",
+        "html": "<p>\n                    The end result was a fluid and responsive character experience that received positive feedback from both teammates and testers.\n                    Key learnings included the importance of early integration testing, modular architecture, and iterative fine-tuning to achieve satisfying game feel.\n                </p>"
+      }
+    ]
+  },
+  {
+    "id": "state-machine-system",
+    "legacyPage": "SMS.html",
+    "title": "State Machine System",
+    "description": "A plugin for Unreal Engine, available on the FAB Marketplace, originally developed during the production of The Negative Edge. It is a generic state machine system for Actors that supports concurrent state machines, custom transitions, input-driven logic, and seamless Blueprint/C++ integration.",
+    "media": {
+      "type": "video",
+      "src": "video/SMS_slides.mp4"
+    },
+    "meta": {
+      "teamSize": "1",
+      "timeFrame": "Few weeks",
+      "engine": "Unreal Engine 5",
+      "platform": "Windows"
+    },
+    "aboutHtml": "<p>A plugin for Unreal Engine, available on the FAB Marketplace, originally developed during the production of The Negative Edge.<br><br>\n                    It is a generic state machine system for Actors that supports concurrent state machines, custom transitions, input-driven logic, and seamless Blueprint/C++ integration.<br><br>\n                    Includes a sample project with a playable character demonstrating movement, jumping, shooting, and state communication.\n                    </p>",
+    "links": [
+      {
+        "label": "View on FAB",
+        "url": "https://www.fab.com/listings/46eb1dda-0fb4-47de-b528-7803f6988d4b"
+      },
+      {
+        "label": "Repository",
+        "url": "https://github.com/gabevlogd/StateMachineSystem"
+      }
+    ],
+    "sections": [
+      {
+        "title": "System UML Overview",
+        "html": "<p>\n                    This UML diagram provides an overview of the system. The idea is to have an ActorComponent called StateMachineComponent to manage individual states, as well as a MultiStateMachineComponent that can run multiple StateMachineComponents simultaneously, enabling more complex state management.\n                </p>\n<img alt=\"img\" src=\"images/UML_SMS.png\">"
+      },
+      {
+        "title": "Plugin Documentation",
+        "html": "<iframe allowfullscreen=\"\" frameborder=\"0\" height=\"1000\" src=\"https://brass-keyboard-cc2.notion.site/ebd/1f1c9702a85d8084aef8c3028f882a6e\" width=\"100%\"></iframe>"
+      }
+    ]
+  },
+  {
+    "id": "gvuedk-framework",
+    "legacyPage": "GVUEDK.html",
+    "title": "GVUEDK-Framework",
+    "description": "GVUEDK (Gabevlogd Unreal Engine Development Kit) is my personal framework for Unreal Engine development. It provides a collection of modular systems and utilities that I’ve built to streamline game development, prototyping, and 3C programming.",
+    "media": {
+      "type": "image",
+      "src": "images/GVUEDK-banner.png"
+    },
+    "meta": {
+      "teamSize": "1",
+      "timeFrame": "In progress",
+      "engine": "Unreal Engine 5",
+      "platform": "Windows"
+    },
+    "aboutHtml": "<p> GVUEDK (Gabevlogd Unreal Engine Development Kit) is my personal framework for Unreal Engine development.<br>\n                        It provides a collection of modular systems and utilities that I’ve built to streamline game development, prototyping, and 3C programming. \n                    </p>",
+    "links": [
+      {
+        "label": "Repository",
+        "url": "https://github.com/gabevlogd/GVUEDK-Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "id": "weabot",
+    "legacyPage": "weabot.html",
+    "title": "Weabot",
+    "description": "An environmental puzzle game where the character is a small flying drone with the ability to take control of other robots encountered along its path, using them to overcome environmental puzzles that block its way.",
+    "media": {
+      "type": "video",
+      "src": "video/Weabot.mp4"
+    },
+    "meta": {
+      "teamSize": "10",
+      "timeFrame": "6 Months",
+      "engine": "Unreal Engine 5",
+      "platform": "Windows"
+    },
+    "aboutHtml": "<p>It is an environmental puzzle game.\n                         The main character is a small flying drone with the ability to take control of other robots encountered along its path, using them to overcome environmental puzzles that block its way.\n                         <br><br>We created a demo consisting of 4 levels (the first one is a tutorial) with a duration of about 40-60 minutes (depending on how much the player explores, as there are hidden optional puzzles in the levels).\n                         <br><br>You can find the last version of the game at the bottom of this page.\n                        </p>",
+    "links": [
+      {
+        "label": "View on Steam",
+        "url": "https://store.steampowered.com/app/4075260/Weabot/"
+      },
+      {
+        "label": "Repository",
+        "url": "https://github.com/gabevlogd/Weabot"
+      }
+    ],
+    "sections": [
+      {
+        "title": "What Is Gamelab?",
+        "html": "<p>\n                    GameLabs are collaborative workshops where students from all disciplines—Game Design, Game Programming, 3D Art, and 2D Art—form teams to create a game from scratch (create a remake of an existing game for first-year students). \n                    These teams are given a set development time to complete and deliver a final product, including a pitch for a hypothetical publisher, simulating a real-world work environment.<br><br>\n                    Students are expected to self-organize and collaborate effectively to bring the game to completion. \n                    The only \"rule\" is that they must use development management tools (such as Trello or Jira) to track and organize the entire creative process, and apply Git version control with proper GitFlow practices.\n                </p>"
+      },
+      {
+        "title": "Main Personal Contribute",
+        "html": "<p>In our team, there were two programmers, and we divided the various systems equally. The main systems I worked on include:\n                    </p><ul>\n<li>Multiple controllable character system: \n                            <span>\n                                the system that manages the core game mechanic, allowing players to control multiple characters through an inheritance-based structure.   \n                            </span>\n</li>\n<li>Health System:\n                            <span> \n                                A generic character health management system and the relative UI.\n                            </span>\n</li>\n<li>Throwing System:\n                            <span>\n                                Component gives the player the ability to aim and throw equipped\n                                items.\n                            </span>\n</li>\n<li>Chaos Implementation: \n                            <span>\n                                Setted up unreal engine’s chaos system for every destructible\n                                object of the game.\n                            </span>\n</li>\n<li>Highlighting System:\n                            <span> \n                                A system for highlighting all interactables objects of the game\n                                when the player is close to them.\n                            </span>\n</li>\n<li>Chest System:\n                            <span> \n                                A chest system with fixed drops, for collecting in-game items. And the\n                                relative UI when collecting new items.\n                            </span>\n</li>\n<li>Items:\n                            <span> \n                                All the items that give the player offensive and defensive abilities.\n                            </span>\n</li>\n</ul>\n<p></p>"
+      },
+      {
+        "title": "UE5 and Blueprints",
+        "html": "<p>\n                    This was my first project in Unreal Engine, and consequently, my first time working with Blueprints. \n                    After six months of using them, I’ve come to the conclusion that they are an extremely powerful tool, especially during the initial prototyping phase. \n                    However, to achieve a clean, organized, and—most importantly—easily maintainable result over time, it’s essential to complement them with good old C++. \n                    As projects grow in complexity, there's a serious risk of getting lost in a tangled mess of nodes that becomes increasingly difficult to manage.<br><br>\n\n                    The class shown below is the base class from which all controllable characters (including the little main drone) inherit.\n\n                    </p><ol>\n<li>Unreal Events<br>\n<span>\n                                Begin Play: Just a basic initialization of the pawn, caching some external references.<br>\n</span>\n</li>\n<li>Movement<br>\n<span>\n                                Input actions from Unreal Enhanced Input System for translation and rotation input.\n                            </span>\n</li>\n<li>Interactable Detection<br>\n<span>\n                                Begin/end ovelap component events for the detection of all interactables (interface) nears the player.\n                                Basically a simple sphere collider.\n                            </span>\n</li>\n<li>Damage <br>\n<span>\n                                Default Unreal's event for damage applying\n                            </span>\n</li>\n<li>Custom Events<br>\n<ul>\n<li>\n                                    TryPossessNewEntity: event for trying to control a new robot. empty because each character needs specific implementation. \n                                </li>\n<li>\n                                    PossessNewEntity: Event for the actual transition to controlling a new robot, in Unreal terms, assigning a new pawn to the player controller.\n                                </li>\n<li>\n                                    PossessionStarted: Called on every robots when the player start to controlling them.\n                                </li>\n<li>\n                                    PossessionEnded: Called on every robots when the player stop to controlling them.\n                                </li>\n<li>\n                                    Respawn: Event used for respawning a robot.  \n                                </li>\n</ul>\n</li>\n<li>Health Manager Events<br>\n<span>\n                                Callbacks from the custom actor component Health Manager, primarily used to trigger VFX associated with various events (damage, regeneration, etc.). \n                                The actual health management is handled within the component's Blueprint.\n                            </span>\n</li>\n</ol>\n<p></p>\n<iframe allowfullscreen=\"\" scrolling=\"no\" src=\"https://blueprintue.com/render/nu_4_8g6/\"></iframe>"
+      }
+    ]
+  },
+  {
+    "id": "push-sushi",
+    "legacyPage": "push-sushi.html",
+    "title": "Push Sushi",
+    "description": "Remake of the original IPhone game Push Sushi. Is a mobile puzzle game where the player must solve puzzles by sliding sushi blocks on a grid to clear a path and free the main piece of the grid.",
+    "media": {
+      "type": "video",
+      "src": "video/PushSushi.mp4"
+    },
+    "meta": {
+      "teamSize": "12",
+      "timeFrame": "4 weeks",
+      "engine": "Unity",
+      "platform": "Android"
+    },
+    "aboutHtml": "<p>\n                        Remake of the original IPhone game Push Sushi.<br>\n                        Is a mobile puzzle game where the player must solve puzzles by sliding sushi blocks on a grid to clear a path and free the main piece of the grid.\n                        <br><br>The game features appealing graphics, an intuitive user interface,\n                        and a progressively challenging difficulty curve that keeps the player engaged and motivated\n                        to solve increasingly complex levels.\n                    </p>",
+    "links": [
+      {
+        "label": "Direct Download",
+        "url": "https://github.com/gabevlogd/PushSushi-Team1/releases/download/v1.2.1/PushSushi-v1.2.1.apk"
+      },
+      {
+        "label": "Repository",
+        "url": "https://github.com/gabevlogd/PushSushi-Team1"
+      }
+    ],
+    "sections": [
+      {
+        "title": "What Is Gamelab?",
+        "html": "<p>\n                    GameLabs are collaborative workshops where students from all disciplines—Game Design, Game Programming, 3D Art, and 2D Art—form teams to create a game from scratch (create a remake of an existing game for first-year students). \n                    These teams are given a set development time to complete and deliver a final product, including a pitch for a hypothetical publisher, simulating a real-world work environment.<br><br>\n                    Students are expected to self-organize and collaborate effectively to bring the game to completion. \n                    The only \"rule\" is that they must use development management tools (such as Trello or Jira) to track and organize the entire creative process, and apply Git version control with proper GitFlow practices.\n                </p>"
+      },
+      {
+        "title": "Main Personal Contribute",
+        "html": "<p>\n                    As the only programmer of the project, I developed all the game features. Below a list of the main systems and features developed:\n                    </p><ul>\n<li>\n                            Pawns Movement System: \n                            <span>\n                                The game pieces can be dragged by sliding the finger\n                                along the direction in which they are oriented while remaining within the limits of the\n                                map or within those determined by the other pieces on the field.\n                            </span>\n</li>\n<li>\n                            Undo Moves System: \n                            <span>\n                                In the HUD there is a button that cancels the last move.\n                                It is possible to go back in the moves up to the initial configuration of the playing field.\n                            </span>\n</li>\n<li>\n                            Score System: \n                            <span>\n                                System that calculates the score at the end of each game based on\n                                the number of moves made and on the hints and undos used to solve the level.\n                            </span>\n</li>\n<li>\n                            Switch Theme System: \n                            <span>\n                                Each theme has a different HUD. The switch theme system\n                                will have to manage the change of the hud theme based on the theme choice made\n                                by the player in the menu.\n                            </span>\n</li>\n<li>\n                            UI System:\n                            <span>\n                                All the game menus and the HUD.\n                            </span>\n</li>\n<li>\n                            Level Editor Tool:\n                            <span>\n                                Tool for fast creation of game levels.\n                            </span>\n</li>\n</ul>\n<p></p>"
+      },
+      {
+        "title": "Tool Programming",
+        "html": "<p>\n                    In this project, I put into practice for the first time what I had just learned about creating tools in Unity. \n                    The goal was to build a level editor tool to speed up the game's level creation process. \n                    The outcome was very successful, as the designer was able to create 30 levels in about a week.  \n                </p>\n<p>\n                    The tool functionality are:\n                    </p><ul>\n<li>New Level: <span>automatically opens a new scene with an empty grid ready to be filled</span></li>\n<li>Save Level: <span>automatically creates a Scriptable Object, with the current grid configuration, Used for the runtime loading of different levels within the same Unity scene.</span></li>\n<li>Pawns Positioning: <span>to fill the grid just select the wanted pawns from the mesh list, select the coordinates on the toogles' grid, click \"place pawn\" to position the selected pawn and \"back\" to undo the last positioning.</span></li>\n</ul>\n<p></p>\n<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\">\n<source src=\"video/PushSushiTool.mp4\" type=\"video/mp4\">\n</video>\n<h2>Level editor tool usage example</h2>"
+      },
+      {
+        "title": "Try WebGL Version",
+        "html": "<p>Play the WebGL version directly in the browser. On Android, the APK is available from the download link above.</p>",
+        "embed": {
+          "type": "iframe",
+          "src": "https://play.unity.com/api/v1/games/game/c3203041-aebc-4047-8094-fec25c606fd7/build/latest/frame",
+          "aspect": "9 / 20",
+          "title": "Push Sushi WebGL build"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hlsl-shader",
+    "legacyPage": "shader.html",
+    "title": "HLSL Shader",
+    "description": "Assignment for the end of the shading module: HLSL on Unity.",
+    "media": {
+      "type": "video",
+      "src": "video/Shader.mp4"
+    },
+    "meta": {
+      "teamSize": "1",
+      "timeFrame": "2 Days",
+      "engine": "Unity",
+      "platform": "Built-in"
+    },
+    "aboutHtml": "<p>\n                        Here's my assignment for the end of the shading module in HLSL on Unity.\n                        Assignment characteristics: \n                        <br><br>Create a crystal shader that must have:\n                        </p><ul>\n<li>transparency</li>\n<li>refraction</li>\n<li>rim light</li>\n</ul>\n<p></p>",
+    "links": [],
+    "sections": [
+      {
+        "title": "Code",
+        "html": "<pre class=\"line-numbers\"><code class=\"language-javascript\">Shader \"Custom/Crystal\"\n{\n    Properties\n    {\n        _FresnelColor(\"Fresnel Color\", Color) = (1, 1, 1, 1)\n        _Color(\"Color\", Color) = (1, 1, 1, 1)\n        _FresnelIntensity(\"Fresnel Intensity\", Range(0, 10)) = 1\n        _FresnelPower(\"Fresnel Power\", Range(0, 10)) = 1\n        _RefractionIndex(\"Refraction Index\", Range(-1, 1)) = 1\n        _Intensity(\"Refraction Intensity\", Range(0, 1)) = 1\n    }\n\n\n\n    SubShader\n    {\n        // Grab the current screen content into _GrabTexture\n        GrabPass{ \"_GrabTexture\" }\n\n        Tags {\"Queue\" = \"Transparent\"}\n        LOD 100\n\n        Pass\n        {\n            CGPROGRAM\n            #pragma vertex vert\n            #pragma fragment frag\n\n            #include \"UnityCG.cginc\"\n\n            struct appdata\n            {\n                float4 vertex : POSITION;\n                float3 normal : NORMAL;\n            };\n\n            struct v2f\n            {\n                float4 vertex : SV_POSITION;\n                float4 grabPos : TEXTCORD0;\n                float3 normal : TEXCOORD1;\n                float3 viewDir : TEXCOORD2;\n            };\n\n            float2 ProjectDirectionToClipSpace(float3 direction)\n            {\n                // Convert the direction vector to homogeneous coordinates (w = 0 for direction vectors)\n                float4 directionHomogeneous = float4(direction, 0.0);\n\n                // Transform the direction from local space to view space\n                float4 viewSpaceDirection = mul(UNITY_MATRIX_V, directionHomogeneous);\n\n                // Transform the direction from view space to clip space\n                float4 clipSpaceDirection = mul(UNITY_MATRIX_P, viewSpaceDirection);\n\n                // Convert to 2D by taking the x and y components\n                float2 clipSpace2D = clipSpaceDirection.xy;\n\n                return clipSpace2D;\n            }\n\n            sampler2D _GrabTexture;\n\n            float4 _FresnelColor;\n            float4 _Color;\n\n            float _FresnelIntensity;\n            float _FresnelPower;\n            float _RefractionIndex;\n            float _Intensity;\n\n            v2f vert(appdata v)\n            {\n                v2f o;\n                o.vertex = UnityObjectToClipPos(v.vertex);\n                o.grabPos = ComputeGrabScreenPos(o.vertex);\n                o.normal = UnityObjectToWorldNormal(v.normal);\n                o.viewDir = WorldSpaceViewDir(v.vertex);\n                return o;\n            }\n\n            fixed4 frag(v2f i) : SV_Target\n            {\n                //normalize in the frag for a smoothest result\n                i.viewDir = normalize(i.viewDir);\n                i.normal = normalize(i.normal);\n\n                //-------------- refraction ----------------\n                float3 refractDir = refract(-i.viewDir, i.normal, _RefractionIndex);\n                float2 reftactDirClipSpace = ProjectDirectionToClipSpace(refractDir);\n                float2 grabUV = (i.grabPos.xy / i.grabPos.w) + (reftactDirClipSpace * _Intensity);\n                //avoid the stretching of the grab texture at the edges by repeating it instead\n                grabUV = grabUV - floor(grabUV);\n                float4 grabColor = tex2D(_GrabTexture, grabUV);\n                //------------ refraction end --------------\n\n                //---------------- fresnel -----------------\n                float NdotV = dot(i.normal, i.viewDir);\n                float fresnelAmount = 1 - max(0, NdotV);\n                float4 fresnelColor = pow(fresnelAmount, _FresnelPower) * _FresnelIntensity * _FresnelColor;\n                //-------------- fresnel end ---------------\n\n                float4 outColor = lerp(fresnelColor, grabColor * _Color, NdotV);\n                return outColor;\n            }\n\n            ENDCG\n        }\n    }\n}</code></pre>"
+      }
+    ]
+  },
+  {
+    "id": "sandwich",
+    "legacyPage": "sandwich.html",
+    "title": "Sandwich!",
+    "description": "Remake of the original mobile game Sandwich!. Is a casual mobile puzzle game where players stack ingredients to create sandwiches",
+    "media": {
+      "type": "video",
+      "src": "video/Sandwich!.mp4"
+    },
+    "meta": {
+      "teamSize": "1",
+      "timeFrame": "1 weeks",
+      "engine": "Unity",
+      "platform": "Android"
+    },
+    "aboutHtml": "<p>\n                        Here's my assignment for the end of the Mobile Development module.<br>\n                        Assignment characteristics:<br>\n                        Recreate the original mobile game Sandwich!.<br><br>\n                        Sandwich! is a casual mobile puzzle game where players stack ingredients to create sandwiches.<br>\n                        The goal is to fold different layers of ingredients in the correct sequence, stacking everything from cheese to vegetables and meats, until a complete sandwich is made.<br> \n                        Simple swipe controls make it easy to fold the ingredients over each other, but careful planning is required to avoid mistakes.\n                    </p>",
+    "links": [
+      {
+        "label": "Direct Download",
+        "url": "https://github.com/gabevlogd/SandwichRemake/releases/download/v1.0.0/SandwichRemake-v1.0.0.apk"
+      },
+      {
+        "label": "Repository",
+        "url": "https://github.com/gabevlogd/SandwichRemake"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Game Loop",
+        "html": "<p>\n</p><ol>\n<li>The <span>GameManager</span> initially loads the <span>PauseState</span>, within which it waits for the player's input to start the game. Additionally, at the game's start (in the Start of <span>LevelLoader</span>), the first level is already instantiated.</li>\n<li>Once the player provides the input to start the game, the state transitions to <span>PlayState</span>.</li>\n<li>Entering <span>PlayState</span> enables the <span>SwipesManager</span>, which handles reading player input to move various elements on the game grid.</li>\n<li>For each valid move made, the win condition is checked; if satisfied, the state changes to <span>WinState</span>.</li>\n<li>Entering <spam>WinState</spam> disables the <span>SwipesManager</span> and waits for the player to input a command to proceed to the next level.</li>\n<li>Once the player inputs the command to advance to the next level, it returns to <span>PlayState</span>.</li>\n<li>Upon exiting <span>WinState</span>, the <span>LoadNextLevel</span> event is triggered. In this event, the <span>LevelLoader</span> loads the new level (using <span>LevelGenerator</span> to generate random levels whenever it's triggered), and all elements of the previous level's grid self-destruct.</li>\n</ol>\n                    Communication between the various classes is primarily managed through <span>static event Actions</span>.\n                <p></p>"
+      },
+      {
+        "title": "Stack Animation",
+        "html": "<p>\n                    Definition: <span>from</span> = stack to be rotated (<span>Target Stack</span>);<br>\n                    Definition: <span>to</span> = stack that receives <span>from</span>.<br>\n                    Definition: <span>stackCount</span> = height of the stack.<br><br>\n\n                    There are three possible animation cases for a Stack:\n                    </p><ul>\n<li>stackCount_from == stackCount_to;</li>\n<li>stackCount_from &lt; stackCount_to;</li>\n<li>stackCount_from &gt; stackCount_to.</li>\n</ul>\n                    Graphic illustration of the three cases mentioned above:\n                <p></p>\n<img alt=\"img\" src=\"images/stack-animation.png\">\n<p>\n                    The <span>StacksAnimator</span> is the class responsible for calculating the <span>Starting Point</span>, <span>Ending Point</span>, and <span>Rotation Pivot</span>, and performing the movement of the <span>Target Stack</span> using a classic <span>state pattern</span> after calculating the necessary data.\n                </p>"
+      },
+      {
+        "title": "Try WebGL Version",
+        "html": "<p>Play the WebGL version directly in the browser. On Android, the APK is available from the download link above.</p>",
+        "embed": {
+          "type": "iframe",
+          "src": "https://play.unity.com/api/v1/games/game/d7e04832-497b-4d3a-972c-b41cfd5b226f/build/latest/frame?access_token=C4JayNy_gcDnYK-srNbqaEp75-xnJ0LSYxL1uydFvKU012f",
+          "aspect": "9 / 20",
+          "title": "Sandwich WebGL build"
+        }
+      }
+    ]
+  },
+  {
+    "id": "tool-programming",
+    "legacyPage": "tool.html",
+    "title": "Tool Programming",
+    "description": "Assignment for the end of the module: Tool Programming on Unity.",
+    "media": {
+      "type": "video",
+      "src": "video/Level Editor Tool.mp4"
+    },
+    "meta": {
+      "teamSize": "1",
+      "timeFrame": "1 week",
+      "engine": "Unity",
+      "platform": ""
+    },
+    "aboutHtml": "<p>\n                        Here's my assignment for the end of the Tool Programming on Unity module.\n                        Assignment characteristics: \n                        <br><br>Create a level editor tool with the following features:\n                        </p><ul>\n<li>Interface from which to select the prefab</li>\n<li>Preview of the prefab in the game viewport, following the mouse cursor</li>\n<li>Ability to rotate the preview of the selected prefab by 90 degrees at a time</li>\n<li>Spawning and snapping of the prefab at the entrance of the wall it is aligned with</li>\n<li>Undo system</li>\n</ul>\n<p></p>",
+    "links": [
+      {
+        "label": "Repository",
+        "url": "https://github.com/gabevlogd/LevelEditorTool"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Preview's Positioning in 3D Space",
+        "html": "<p>\n                    The prefab preview needs to follow the mouse, so to calculate this position, it's fairly straightforward to understand that a raycast is required.<br> \n                    This raycast originates from the camera's position and is directed toward the mouse pointer (a function already provided by Unity).<br> \n                    Now that we have the direction, the key is determining at what distance from the camera the intersection point with the terrain lies along this path.<br><br>\n                    The first idea, which I initially implemented, was to spawn an invisible plane and simply get the exact point by detecting where the raycast hits.<br> \n                    This works, but it's not a very elegant solution.\n                </p>\n<img alt=\"img\" src=\"images/tool.png\">\n<p>\n                    If we think about the problem for a moment, it's not too difficult to realize that the camera's position and the point we want to calculate are the two vertices of the acute angles in a right triangle. \n                    Therefore, the distance we need to calculate is simply the hypotenuse of this triangle.<br>\n                    Once this is understood, the solution becomes straightforward, as trigonometry tells us that:<br><br>\n                    hypotenuse = Cam.position.y / cos(α), where cos(α) = Cam.downward • Raycast.direction.\n                </p>\n<pre class=\"line-numbers\"><code class=\"language-javascript\">private void UpdatePreviewPosition()\n{\n    Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);\n    if (Physics.Raycast(ray, out RaycastHit hit) &amp;&amp; hit.collider.CompareTag(\"SnapPoint\") &amp;&amp; _enablePreviewSnapping)\n    {\n        TrySnapPreviewPosition(hit, ray);\n    }\n    else\n    {\n        _previewPosition = CalculatePreviewPosition(ray);\n    }           \n}               </code></pre>\n<pre class=\"line-numbers\"><code class=\"language-javascript\">/// Calculate where to locate the preview in the 3D world space based on the camera and mouse pointer position\n/// param name=\"ray\" ray that starts from the camera position and go through the mouse pointer\nprivate Vector3 CalculatePreviewPosition(Ray ray)\n{\n    // H = Y / D  where H = hypotenuse , Y = cathetus ,  D = Cos(angle between Y and H)\n    float hypotenuse = ray.origin.y / Vector3.Dot(Vector3.down, ray.direction);\n    return ray.origin + ray.direction * hypotenuse + Vector3.up * _spawnPositionHeight;\n}               </code></pre>"
+      },
+      {
+        "title": "Preview Snapping",
+        "html": "<p>\n                    The reasoning I followed for this feature is as follows:<br><br>\n                    Each prefab is a SnappableObject, which has a list of snap points (i.e., a list of Transforms), each accompanied by a collider. \n                    We define the direction from the center of a SnappableObject to one of its snap points as Dn.<br><br>\n                    This means that if a SnappableObject has four snap points, we can calculate D1, D2, D3, and D4.<br><br>\n                    Based on this definition, we can say that two snap points from two different SnappableObjects (Dx and Dy) are aligned if the dot product between them equals 1.\n                </p>\n<pre class=\"line-numbers\"><code class=\"language-javascript\">private void TrySnapPreviewPosition(RaycastHit snapPoint, Ray ray)\n{\n    _selectedObject.TryGetComponent(out SnappableObject snappableObject);\n                \n    //this vector is a direction that goes from the center of the snappableObject\n    //present in the scene to its snap point (door) currently inspected by the mouse pointer\n    Vector3 direction = snapPoint.transform.parent.rotation * snapPoint.transform.localPosition.normalized;\n                \n    //(if doors are aligned)\n    if (CanSnap(direction, snappableObject))\n    {\n        _previewPosition = snapPoint.transform.position;\n    }\n    else\n    {\n        _previewPosition = CalculatePreviewPosition(ray);\n    }\n}               </code></pre>\n<pre class=\"line-numbers\"><code class=\"language-javascript\">private bool CanSnap(Vector3 snapDirection, SnappableObject snappableObj)\n{\n    foreach(Transform trs in snappableObj.SnapPoint)\n    {\n        if (Vector3.Dot(snapDirection, _previewRotation * trs.localPosition.normalized) &lt; -0.9f)\n            return true;\n    }\n    return false;\n}               </code></pre>"
+      }
+    ]
+  }
+]

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#07100f">
+  <title>Portfolio Project Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+          <img src="images/logos/GVLogo.png" alt="Logo Gabriele Garofalo">
+        </span>
+      <span class="brand-copy"><strong>Portfolio Editor</strong><small>Local content manager</small></span>
+    </a>
+    <div class="admin-actions">
+      <label class="button button-secondary button-small file-button">Import JSON<input id="import-file" type="file" accept="application/json,.json"></label>
+      <button class="button button-primary button-small" id="export-button" type="button">Export projects.json</button>
+    </div>
+  </header>
+
+  <main class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="sidebar-title">
+        <div><p>Content</p><h1>Projects</h1></div>
+        <button id="new-project" class="icon-button" type="button" title="Create project" aria-label="Create project">+</button>
+      </div>
+      <div id="project-list" class="admin-project-list"></div>
+      <div class="admin-help">
+        <strong>How publishing works</strong>
+        <p>Make your changes, export the JSON file, then replace <code>data/projects.json</code> in the GitHub repository. GitHub Pages will update automatically.</p>
+      </div>
+    </aside>
+
+    <section class="admin-editor">
+      <div id="editor-empty" class="editor-empty">Loading portfolio data...</div>
+      <form id="project-form" hidden>
+        <div class="editor-heading">
+          <div><p class="section-index">Project entry</p><h2 id="editor-title">Edit project</h2></div>
+          <div class="editor-heading-actions">
+            <button class="button button-secondary button-small" id="move-up" type="button">Move up</button>
+            <button class="button button-secondary button-small" id="move-down" type="button">Move down</button>
+            <button class="button button-danger button-small" id="delete-project" type="button">Delete</button>
+          </div>
+        </div>
+
+        <section class="editor-card">
+          <h3>Core information</h3>
+          <div class="field-grid two-columns">
+            <label class="admin-field"><span>Project title</span><input name="title" required></label>
+            <label class="admin-field"><span>Project ID / URL slug</span><input name="id" required pattern="[a-z0-9-]+"><small>Lowercase letters, numbers and hyphens.</small></label>
+          </div>
+          <label class="admin-field"><span>Card description</span><textarea name="description" rows="4" required></textarea></label>
+        </section>
+
+        <section class="editor-card">
+          <h3>Project metadata</h3>
+          <div class="field-grid four-columns">
+            <label class="admin-field"><span>Team size</span><input name="teamSize"></label>
+            <label class="admin-field"><span>Time frame</span><input name="timeFrame"></label>
+            <label class="admin-field"><span>Engine</span><input name="engine"></label>
+            <label class="admin-field"><span>Platform / pipeline</span><input name="platform"></label>
+          </div>
+        </section>
+
+        <section class="editor-card">
+          <h3>Hero media</h3>
+          <div class="field-grid media-grid">
+            <label class="admin-field"><span>Media type</span><select name="mediaType"><option value="video">Video</option><option value="image">Image</option></select></label>
+            <label class="admin-field field-wide"><span>File path</span><input name="mediaSrc" placeholder="video/MyProject.mp4 or images/MyProject.jpg"></label>
+          </div>
+          <p class="field-hint">Upload the media file to the matching folder in your repository, then enter its relative path here.</p>
+        </section>
+
+        <section class="editor-card">
+          <div class="card-heading"><h3>About</h3><div class="rich-toolbar" data-toolbar="about-editor"></div></div>
+          <div id="about-editor" class="rich-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Describe the project, your role and its context..."></div>
+        </section>
+
+        <section class="editor-card">
+          <div class="card-heading"><h3>External links</h3><button class="button button-secondary button-small" id="add-link" type="button">+ Add link</button></div>
+          <div id="links-editor" class="repeat-list"></div>
+        </section>
+
+        <section class="editor-card">
+          <div class="card-heading"><h3>Content sections</h3><button class="button button-secondary button-small" id="add-section" type="button">+ Add section</button></div>
+          <p class="field-hint">Use sections for technical details, contributions, results, diagrams or embedded builds.</p>
+          <div id="sections-editor" class="section-editor-list"></div>
+        </section>
+
+        <div class="save-bar">
+          <p id="save-status">Changes are kept in this browser until you export the JSON file.</p>
+          <button class="button button-primary" type="submit">Apply project changes</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <template id="link-template">
+    <div class="repeat-row link-row">
+      <label class="admin-field"><span>Label</span><input data-field="label" placeholder="Repository"></label>
+      <label class="admin-field field-wide"><span>URL</span><input data-field="url" type="url" placeholder="https://..."></label>
+      <button class="icon-button remove-button" type="button" title="Remove link" aria-label="Remove link">×</button>
+    </div>
+  </template>
+
+  <template id="section-template">
+    <article class="section-editor-item">
+      <div class="section-editor-head">
+        <label class="admin-field field-wide"><span>Section title</span><input data-field="title" placeholder="Development focus"></label>
+        <div class="section-order-actions">
+          <button class="icon-button" data-action="section-up" type="button" title="Move section up">↑</button>
+          <button class="icon-button" data-action="section-down" type="button" title="Move section down">↓</button>
+          <button class="icon-button remove-button" data-action="section-remove" type="button" title="Remove section">×</button>
+        </div>
+      </div>
+      <div class="rich-toolbar"></div>
+      <div class="rich-editor section-rich-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Write the section content..."></div>
+      <details class="embed-details">
+        <summary>Optional iframe embed</summary>
+        <div class="field-grid three-columns">
+          <label class="admin-field field-wide"><span>Embed URL</span><input data-field="embedSrc" type="url" placeholder="https://..."></label>
+          <label class="admin-field"><span>Aspect ratio</span><input data-field="embedAspect" placeholder="16 / 9"></label>
+          <label class="admin-field"><span>Accessible title</span><input data-field="embedTitle" placeholder="Playable web build"></label>
+        </div>
+      </details>
+    </article>
+  </template>
+
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>

@@ -1,610 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriele Garofalo | Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Open Graph per LinkedIn, Facebook, ecc. -->
-    <meta property="og:title" content="Gabriele Garofalo - Game Programmer Portfolio" />
-    <meta property="og:image" content="/images/Photo.jpg" />
-    <meta property="og:url" content="https://gabevlogd.github.io/" />
-    <meta property="og:type" content="website" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Gabriele Garofalo, Software / Systems Programmer focused on C++, real-time applications and game development.">
+  <meta name="theme-color" content="#07100f">
+  <title>Gabriele Garofalo | Software / Systems Programmer</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <meta property="og:title" content="Gabriele Garofalo - Software / Systems Programmer">
+  <meta property="og:description" content="C++, real-time applications, gameplay systems, character control and camera behaviour.">
+  <meta property="og:image" content="images/Photo.jpg">
+  <meta property="og:url" content="https://gabevlogd.github.io/">
+  <meta property="og:type" content="website">
 </head>
-
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-container-A">
-                <a href="index.html"><div class="header-container-A1"> <img src="/images/logos/GVLogo.png" alt="github"> </div> </a>
-                <a href="index.html"> <div class="header-container-A2"> <h1>Gabriele Garofalo</h1> <h2>Software / Systems Programmer</h2> </div> </a>
-            </div>
-            <nav class="header-container-B">
-                <a href="https://www.instagram.com/gabevlogd/" target="_blank"> <img src="/images/logos/InstagramLogo.png" alt="instagram"> </a>
-                <a href="https://www.linkedin.com/in/gabriele-garofalo-8517a8291/" target="_blank"> <img src="/images/logos/LinkedinLogo.png" alt="linkedin"></a>
-                <a href="https://github.com/gabevlogd" target="_blank"> <img src="/images/logos/GithubLogo.png" alt="github"></a>
-            </nav>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Gabriele Garofalo homepage">
+        <span class="brand-mark">
+          <img src="images/logos/GVLogo.png" alt="Logo Gabriele Garofalo">
+        </span>
+        <span class="brand-copy">
+          <strong>Gabriele Garofalo</strong>
+          <small>Software / Systems Programmer</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" data-nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#studies">Studies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span>C++ · Real-time systems · Game development</p>
+          <h1>Building responsive systems for <em>interactive worlds.</em></h1>
+          <p class="hero-intro">Hi, I’m Gabriele, a <strong>Software/Systems Programmer</strong> with a strong background in <strong>C++</strong> and <strong>real-time applications</strong>.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore projects <span aria-hidden="true">↘</span></a>
+            <a class="button button-secondary" href="#contact">Get in touch</a>
+          </div>
+          <div class="hero-links" aria-label="Resume links">
+            <a href="pdf/Gabriele Garofalo CV_SP.pdf" target="_blank" rel="noreferrer">Software / Systems CV <span aria-hidden="true">↗</span></a>
+            <a href="pdf/Gabriele Garofalo CV_GP.pdf" target="_blank" rel="noreferrer">Game Development CV <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <div class="main-content">
-            <div class="about">
-                <img src="/images/Photo.jpg" alt="Photo">
-                <p>
-                    Hi, I’m Gabriele, a <b>Software/Systems Programmer</b> with a strong background in <b>C++</b> and <b>real-time applications</b>.
-                    <br>I come from game development, where I specialized in <b>gameplay systems</b>, character control, and camera behaviour (3C), 
-                    working on <b>performance-critical</b> and interactive software using Unreal Engine and Unity.
-
-                    <br><br>Below you’ll find a selection of projects I’ve worked on, including a <b>commercial Steam release</b> and <b>publicly released tool</b>. 
-                    I’m currently seeking opportunities as a <b>C++ Software/Systems Programmer</b>, while continuing to grow within game and interactive development.
-                </p>
-                <div class="resume">
-                    <a href="pdf/Gabriele Garofalo CV_SP.pdf" target="_blank">Software / Systems CV</a>
-                    <a href="pdf/Gabriele Garofalo CV_GP.pdf" target="_blank">Game Development CV</a>
-                </div>
-            </div>
-
-            <div class="skills">
-                <h2>Main Skills</h2>
-                <div class="skills-item">
-                    <h3>C++</h3>
-                    <h3>C#</h3>
-                    <h3>Unity</h3>
-                    <h3>Unreal Engine</h3>
-                    <h3>OOP</h3>
-                    <h3>Physics</h3>
-                    <h3>Math</h3>
-                    <h3>Git Flow</h3>
-                </div>
-            </div>
-
-            <div class="projects">
-                <h2>Projects</h2>
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <a href="projectBW.html">
-                            <div class="overlay-container">
-                                <video autoplay muted loop playsinline>
-                                    <source src="video/ProjectBW.mp4" type="video/mp4">
-                                </video> 
-                                <div class="overlay">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>9</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>In progress</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Unreal Engine 5</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PlatformIcon.png" alt="platform icon">
-                                                </div>    
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Windows</h4>
-                                                </div>    
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <h3>The Negative Edge</h3>
-                            <p>Project currently under development: Third Person Shooter Arena.</p>
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="SMS.html">
-                            <div class="overlay-container">
-                                <video autoplay muted loop playsinline>
-                                    <source src="video/SMS_slides.mp4" type="video/mp4">
-                                </video> 
-                                <div class="overlay">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>1</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Few weeks</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Unreal Engine 5</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PlatformIcon.png" alt="platform icon">
-                                                </div>    
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Windows</h4>
-                                                </div>    
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <h3>State Machine System</h3>
-                            <p>A plugin for Unreal Engine, available on the FAB Marketplace, originally developed during the production of The Negative Edge. It is a generic state machine system for Actors that supports concurrent state machines, custom transitions, input-driven logic, and seamless Blueprint/C++ integration.</p>
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="GVUEDK.html">
-                            <div class="overlay-container">
-                                <img src="/images/GVUEDK-banner.png" alt="GVUEDK banner">
-                                <div class="overlay">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>1</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>In progress</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Unreal Engine 5</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PlatformIcon.png" alt="platform icon">
-                                                </div>    
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Windows</h4>
-                                                </div>    
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <h3>GVUEDK-Framework</h3>
-                            <p>
-                                GVUEDK (Gabevlogd Unreal Engine Development Kit) is my personal framework for Unreal Engine development.<br>
-                                It provides a collection of modular systems and utilities that I’ve built to streamline game development, prototyping, and 3C programming. 
-                            </p>
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="weabot.html">
-                            <div class="overlay-container">
-                                <video autoplay muted loop playsinline>
-                                    <source src="video/Weabot.mp4" type="video/mp4">
-                                </video> 
-                                <div class="overlay">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>10</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>6 Months</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Unreal Engine 5</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PlatformIcon.png" alt="platform icon">
-                                                </div>    
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Windows</h4>
-                                                </div>    
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <h3>Weabot</h3>
-                            <p>An environmental puzzle game where the character is a small flying drone with the ability to take control of other robots encountered along its path, using them to overcome environmental puzzles that block its way.</p>
-                        </a>
-                    </div>
-                    
-                    <div class="grid-item">
-                        <a href="push-sushi.html">
-                            <div class="overlay-container">
-                                <video autoplay muted loop playsinline>
-                                    <source src="video/PushSushi.mp4" type="video/mp4">
-                                </video> 
-                                <div class="overlay">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>12</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>4 weeks</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Unity</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PlatformIcon.png" alt="platform icon">
-                                                </div>    
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Android</h4>
-                                                </div>    
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <h3>Push Sushi</h3>
-                            <p>
-                                Remake of the original IPhone game Push Sushi.<br>
-                                Is a mobile puzzle game where the player must solve puzzles by sliding sushi blocks on a grid to clear a path and free the main piece of the grid.
-                            </p>
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="shader.html">
-                            <div class="overlay-container">
-                                <video autoplay muted loop playsinline>
-                                    <source src="video/Shader.mp4" type="video/mp4">
-                                </video> 
-                                <div class="overlay">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>1</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>2 days</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Unity</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/RenderIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Built-in</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <h3>HLSL Shader</h3>
-                            <p>
-                                Assignment for the end of the shading module: HLSL on Unity.
-                            </p>
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="sandwich.html">
-                            <div class="overlay-container">
-                                <video autoplay muted loop playsinline>
-                                    <source src="video/Sandwich!.mp4" type="video/mp4">
-                                </video> 
-                                <div class="overlay">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>1</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>1 week</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Unity</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PlatformIcon.png" alt="platform icon">
-                                                </div>    
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Android</h4>
-                                                </div>    
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <h3>Sandwich!</h3>
-                            <p>
-                                Remake of the original mobile game Sandwich!.<br>
-                                Is a casual mobile puzzle game where players stack ingredients to create sandwiches
-                            </p>
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="tool.html">
-                            <div class="overlay-container">
-                                <video autoplay muted loop playsinline>
-                                    <source src="video/Level Editor Tool.mp4" type="video/mp4">
-                                </video> 
-                                <div class="overlay">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/PeoplesIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>1</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/ClockIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>1 week</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-data">
-                                                    <img src="/images/icons/GearIcon.png" alt="clock icon">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-data">
-                                                    <h4>Unity</h4>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <h3>Tool Programming</h3>
-                            <p>Assignment for the end of the module: Tool Programming on Unity.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="educations">
-                <h2>Studies</h2>
-                <nav class="educations-grid">
-                    <div class="educations-grid-item">
-                        <a href="https://www.donmilanitradate.it/indirizzo-di-studio/grafica/" target="_blank">
-                            <h3>Art High School Diploma (2018)</h3>
-                            <p>I graduated from an Art High School with a specialization in Graphic Design.</p>
-                        </a>
-                    </div>
-                    <div class="educations-grid-item">
-                        <a href="https://www.unimi.it/it/corsi/laurea-triennale/fisica" target="_blank">
-                            <h3>Physics | University of Milan (2018 - 2022)</h3>  
-                            <p>I studied physics at the University of Milan.</p> 
-                        </a>
-                    </div>
-                    <div class="educations-grid-item">
-                        <a href="https://www.eventhorizonschool.com/corsi/corso-game-programmer/?portfolioCats=64%2C63" target="_blank">
-                            <h3>Event Horizon School (2022 - 2025)</h3>
-                            <p>I graduated in game programming at Event Horizon School.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="portrait-frame">
+            <img src="images/Photo.jpg" alt="Portrait of Gabriele Garofalo" width="760" height="760">
+          </div>
         </div>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <h5>© 2025 Gabriele Garofalo — All rights reserved
-                <br><br>gabrielegarofalo999@gmail.com</h5>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="shell split-layout">
+        <div class="section-heading reveal">
+          <p class="section-index">01 / About</p>
+          <h2>Engineering with a gameplay mindset.</h2>
         </div>
-    </footer>
+        <div class="about-content reveal" data-delay="1">
+          <p>I come from game development, where I specialized in <strong>gameplay systems</strong>, character control, and camera behaviour (3C), working on <strong>performance-critical</strong> and interactive software using Unreal Engine and Unity.</p>
+          <p>Below you’ll find a selection of projects I’ve worked on, including a <strong>commercial Steam release</strong> and <strong>publicly released tool</strong>. I’m currently seeking opportunities as a <strong>C++ Software/Systems Programmer</strong>, while continuing to grow within game and interactive development.</p>
+
+          <div class="skills-panel">
+            <div class="skills-title">
+              <span class="status-dot" aria-hidden="true"></span>
+              <h3>Main Skills</h3>
+            </div>
+            <ul class="skill-list" aria-label="Main skills">
+              <li>C++</li><li>C#</li><li>Unity</li><li>Unreal Engine</li>
+              <li>OOP</li><li>Physics</li><li>Math</li><li>Git Flow</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="shell">
+        <div class="section-heading section-heading-row reveal">
+          <div>
+            <p class="section-index">02 / Selected work</p>
+            <h2>Projects and systems.</h2>
+          </div>
+          <p class="section-note">A selection of game, engine and tool programming work.</p>
+        </div>
+        <div class="project-grid" id="project-grid" aria-live="polite">
+          <div class="loading-card">Loading projects<span class="loading-dots">...</span></div>
+        </div>
+        <noscript><p class="notice">JavaScript is required to load the project list.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section studies-section" id="studies">
+      <div class="shell split-layout">
+        <div class="section-heading reveal">
+          <p class="section-index">03 / Studies</p>
+          <h2>A multidisciplinary path.</h2>
+        </div>
+        <div class="timeline reveal" data-delay="1">
+          <a class="timeline-item" href="https://www.donmilanitradate.it/indirizzo-di-studio/grafica/" target="_blank" rel="noreferrer">
+            <span class="timeline-year">2018</span>
+            <div><h3>Art High School Diploma</h3><p>I graduated from an Art High School with a specialization in Graphic Design.</p></div>
+            <span class="timeline-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="timeline-item" href="https://www.unimi.it/it/corsi/laurea-triennale/fisica" target="_blank" rel="noreferrer">
+            <span class="timeline-year">2018 — 2022</span>
+            <div><h3>Physics | University of Milan</h3><p>I studied physics at the University of Milan.</p></div>
+            <span class="timeline-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="timeline-item" href="https://www.eventhorizonschool.com/corsi/corso-game-programmer/?portfolioCats=64%2C63" target="_blank" rel="noreferrer">
+            <span class="timeline-year">2022 — 2025</span>
+            <div><h3>Event Horizon School</h3><p>I graduated in game programming at Event Horizon School.</p></div>
+            <span class="timeline-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="shell contact-grid">
+        <div class="contact-copy reveal">
+          <p class="section-index">04 / Contact</p>
+          <h2>Let’s build something that feels great to use.</h2>
+          <p>Use the form to send me a message, or contact me directly by email.</p>
+          <a class="email-link" href="mailto:gabrielegarofalo999@gmail.com">gabrielegarofalo999@gmail.com <span aria-hidden="true">↗</span></a>
+          <div class="social-links" aria-label="Social profiles">
+            <a href="https://www.linkedin.com/in/gabriele-garofalo-8517a8291/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/gabevlogd" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.instagram.com/gabevlogd/" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" data-delay="1" action="https://formsubmit.co/ac1f9c6aa19b1dca9ceaf459fb42732d" method="POST">
+          <input type="hidden" name="_subject" value="New portfolio contact">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://gabevlogd.github.io/thanks.html">
+          <input class="honey-field" type="text" name="_honey" tabindex="-1" autocomplete="off">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name">
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" required placeholder="Project, role or collaboration">
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Tell me what you have in mind"></textarea>
+          </div>
+          <button class="button button-primary form-submit" type="submit">Send message <span aria-hidden="true">→</span></button>
+          <p class="form-note">For opportunities, collaborations, or questions, feel free to get in touch.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>© <span data-year>2026</span> Gabriele Garofalo — All rights reserved</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
 </body>
-
 </html>
