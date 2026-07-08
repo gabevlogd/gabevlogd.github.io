@@ -152,54 +152,39 @@
           </div>
         </div>
 
-        <form
-          class="contact-form reveal"
-          data-delay="1"
-          action="https://formsubmit.co/gabrielegarofalo999@gmail.com"
-          method="POST"
-        >
-          <input
-            type="hidden"
-            name="_url"
-            value="https://gabevlogd.github.io/"
-          >
+        <form class="contact-form reveal" data-delay="1" action="https://formsubmit.co/ac1f9c6aa19b1dca9ceaf459fb42732d" method="POST">
+
+          <input type="hidden" name="_url" value="https://gabevlogd.github.io/">
+          <input type="hidden" name="_subject" value="New portfolio contact">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://gabevlogd.github.io/thanks.html">
 
           <div class="form-row">
             <label for="name">Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              placeholder="Your name"
-            >
+            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name">
           </div>
 
           <div class="form-row">
             <label for="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              placeholder="you@example.com"
-            >
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" required placeholder="Project, role or collaboration">
           </div>
 
           <div class="form-row">
             <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="6"
-              required
-              placeholder="Test message"
-            ></textarea>
+            <textarea id="message" name="message" rows="6" required placeholder="Tell me what you have in mind"></textarea>
           </div>
 
           <button class="button button-primary form-submit" type="submit">
-            Send message
+            Send message <span aria-hidden="true">→</span>
           </button>
+
+          <p class="form-note">For opportunities, collaborations, or questions, feel free to get in touch.</p>
+
         </form>
       </div>
     </section>
