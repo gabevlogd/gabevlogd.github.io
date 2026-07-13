@@ -70,6 +70,15 @@
 .save-bar p { margin: 0; color: var(--muted); font-size: .75rem; }
 .save-bar p.is-success { color: var(--accent); }
 
+.rich-editor img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
 @media (max-width: 1000px) {
   .admin-layout { grid-template-columns: 230px minmax(0,1fr); }
   .four-columns { grid-template-columns: repeat(2,minmax(0,1fr)); }

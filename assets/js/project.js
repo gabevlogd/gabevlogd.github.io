@@ -7,6 +7,52 @@
   const bodyProjectId = document.body.dataset.projectId;
   const projectId = bodyProjectId || params.get('id');
 
+  const isMobileDevice = () => {
+  const userAgentDataMobile = navigator.userAgentData?.mobile === true;
+  const mobileUserAgent = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const iPadDesktopMode = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+  const coarsePointerDevice = window.matchMedia('(max-width: 1024px) and (pointer: coarse)').matches;
+
+  return userAgentDataMobile || mobileUserAgent || iPadDesktopMode || coarsePointerDevice;
+};
+
+const renderEmbed = (section) => {
+  const src = section.embed?.src;
+
+  if (!src) {
+    return '';
+  }
+
+  const isUnityWebGL = /play\.unity\.com\/api\/v1\/games\/game\//i.test(src);
+
+  if (isUnityWebGL && isMobileDevice()) {
+    return `
+      <div class="embed-mobile-notice" role="note">
+        <span class="embed-mobile-notice-icon" aria-hidden="true">↗</span>
+        <div>
+          <strong>WebGL build available on desktop</strong>
+          <p>
+            The embedded version is disabled on mobile devices to avoid stability
+            and memory issues. Open this page from a desktop browser to play it.
+            On Android, you can also use the Direct Download button above.
+          </p>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="embed-wrap" style="aspect-ratio:${escapeHtml(section.embed.aspect || '16 / 9')}">
+      <iframe
+        src="${escapeHtml(src)}"
+        title="${escapeHtml(section.embed.title || section.title)}"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+  `;
+};
+
   const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, (char) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
   })[char]);
@@ -50,10 +96,7 @@
       ].filter(([, value]) => value);
 
       const sections = (project.sections || []).map((section, index) => {
-        const embed = section.embed?.src ? `
-          <div class="embed-wrap" style="aspect-ratio:${escapeHtml(section.embed.aspect || '16 / 9')}">
-            <iframe src="${escapeHtml(section.embed.src)}" title="${escapeHtml(section.embed.title || section.title)}" loading="lazy" allowfullscreen></iframe>
-          </div>` : '';
+        const embed = renderEmbed(section);
         return `
           <section class="project-section">
             <div class="shell project-section-grid">

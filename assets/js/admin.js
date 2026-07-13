@@ -31,26 +31,85 @@
 
   const createToolbar = (toolbar, editor) => {
     if (!toolbar || toolbar.children.length) return;
+
     const actions = [
-      ['B', 'bold', 'Bold'], ['I', 'italic', 'Italic'], ['H3', 'formatBlock', 'Heading'],
-      ['• List', 'insertUnorderedList', 'Bullet list'], ['Link', 'createLink', 'Link']
+      ['B', 'bold', 'Bold'],
+      ['I', 'italic', 'Italic'],
+      ['H3', 'formatBlock', 'Heading'],
+      ['• List', 'insertUnorderedList', 'Bullet list'],
+      ['Link', 'createLink', 'Link'],
+      ['Image', 'insertImage', 'Insert image']
     ];
+
     actions.forEach(([label, command, title]) => {
       const button = document.createElement('button');
-      button.type = 'button'; button.textContent = label; button.title = title;
+
+      button.type = 'button';
+      button.textContent = label;
+      button.title = title;
+
       button.addEventListener('mousedown', (event) => {
         event.preventDefault();
+
+        const selection = window.getSelection();
+        const savedRange = selection?.rangeCount
+          ? selection.getRangeAt(0).cloneRange()
+          : null;
+
         editor.focus();
+
         if (command === 'createLink') {
           const url = window.prompt('Link URL:');
-          if (url) document.execCommand(command, false, url);
+
+          if (url) {
+            document.execCommand('createLink', false, url);
+          }
+        } else if (command === 'insertImage') {
+          const src = window.prompt(
+            'Image path, for example: images/UML_SMS.png',
+            'images/'
+          );
+
+          if (!src) return;
+
+          const alt = window.prompt(
+            'Alternative text describing the image:',
+            ''
+          ) || '';
+
+          let range = savedRange;
+
+          if (!range || !editor.contains(range.commonAncestorContainer)) {
+            range = document.createRange();
+            range.selectNodeContents(editor);
+            range.collapse(false);
+          }
+
+          const image = document.createElement('img');
+
+          image.src = src.trim();
+          image.alt = alt.trim();
+          image.loading = 'lazy';
+          image.decoding = 'async';
+
+          range.deleteContents();
+          range.insertNode(image);
+          range.setStartAfter(image);
+          range.collapse(true);
+
+          if (selection) {
+            selection.removeAllRanges();
+            selection.addRange(range);
+          }
         } else if (command === 'formatBlock') {
-          document.execCommand(command, false, 'h3');
+          document.execCommand('formatBlock', false, 'h3');
         } else {
           document.execCommand(command, false, null);
         }
+
         markDirty();
       });
+
       toolbar.appendChild(button);
     });
   };
