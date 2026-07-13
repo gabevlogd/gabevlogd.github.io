@@ -12,7 +12,7 @@
       "teamSize": "13",
       "timeFrame": "October 2024 – Present",
       "engine": "Unreal Engine 5",
-      "platform": "PC / Steam"
+      "platform": "PC - Steam"
     },
     "aboutHtml": "<p class=\"isSelectedEnd\"><em>Negative Edge</em> is a third-person action arena shooter focused on fast movement, ranged combat and a physics-driven grappling hook. Its gameplay alternates between exploration, combat encounters and story-driven progression across a sequence of interconnected environments.</p><p class=\"isSelectedEnd\">I worked on the project as Technical Lead and Lead Gameplay/Systems Programmer. I designed and implemented a large part of the game’s core technical foundation, including player movement, camera behavior, aiming assistance, interaction, character states, combat resources, enemy encounters, progression events and several tools used by the design team.</p><p class=\"isSelectedEnd\">My responsibilities extended beyond programming. I acted as the main technical point of reference across the team, evaluating the feasibility of proposed features, supporting designers and artists during implementation, coordinating the integration of assets and systems, resolving source-control conflicts and producing updated builds.</p><p>My role was ultimately to connect the team’s creative vision with its practical execution, balancing gameplay quality, technical sustainability, production time and the resources available to a small independent team.</p><p><img src=\"images/NE_Cover.png\" alt=\"Negative Edge Cover Art\" loading=\"lazy\" decoding=\"async\"></p>",
     "links": [
@@ -61,6 +61,71 @@
     ]
   },
   {
+    "id": "golem-rumble",
+    "legacyPage": "",
+    "title": "Golem Rumble",
+    "description": "A fast-paced 1v1 arena brawler where shamans summon golems through magical masks. Build your minion squad each round and fight alongside them to outplay your opponent.",
+    "media": {
+      "type": "video",
+      "src": "video/GolemRumble.mp4"
+    },
+    "meta": {
+      "teamSize": "6",
+      "timeFrame": "1 Month",
+      "engine": "Unreal Engine 5",
+      "platform": "PC - Steam"
+    },
+    "aboutHtml": "<p></p>",
+    "links": [
+      {
+        "label": "View on Steam",
+        "url": "https://store.steampowered.com/app/4461610/Golem_Rumble/"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "id": "weabot",
+    "legacyPage": "weabot.html",
+    "title": "Weabot",
+    "description": "An environmental puzzle game where the character is a small flying drone with the ability to take control of other robots encountered along its path, using them to overcome environmental puzzles that block its way.",
+    "media": {
+      "type": "video",
+      "src": "video/Weabot.mp4"
+    },
+    "meta": {
+      "teamSize": "10",
+      "timeFrame": "6 Months",
+      "engine": "Unreal Engine 5",
+      "platform": "PC - Steam"
+    },
+    "aboutHtml": "<p>It is an environmental puzzle game.\n                         The main character is a small flying drone with the ability to take control of other robots encountered along its path, using them to overcome environmental puzzles that block its way.\n                         <br><br>We created a demo consisting of 4 levels (the first one is a tutorial) with a duration of about 40-60 minutes (depending on how much the player explores, as there are hidden optional puzzles in the levels).\n                         <br><br>You can find the last version of the game at the bottom of this page.\n                        </p>",
+    "links": [
+      {
+        "label": "View on Steam",
+        "url": "https://store.steampowered.com/app/4075260/Weabot/"
+      },
+      {
+        "label": "Repository",
+        "url": "https://github.com/gabevlogd/Weabot"
+      }
+    ],
+    "sections": [
+      {
+        "title": "What Is Gamelab?",
+        "html": "<p>\n                    GameLabs are collaborative workshops where students from all disciplines—Game Design, Game Programming, 3D Art, and 2D Art—form teams to create a game from scratch (create a remake of an existing game for first-year students). \n                    These teams are given a set development time to complete and deliver a final product, including a pitch for a hypothetical publisher, simulating a real-world work environment.<br><br>\n                    Students are expected to self-organize and collaborate effectively to bring the game to completion. \n                    The only \"rule\" is that they must use development management tools (such as Trello or Jira) to track and organize the entire creative process, and apply Git version control with proper GitFlow practices.\n                </p>"
+      },
+      {
+        "title": "Main Personal Contribute",
+        "html": "<p>In our team, there were two programmers, and we divided the various systems equally. The main systems I worked on include:\n                    </p><ul>\n<li>Multiple controllable character system: \n                            <span>\n                                the system that manages the core game mechanic, allowing players to control multiple characters through an inheritance-based structure.   \n                            </span>\n</li>\n<li>Health System:\n                            <span> \n                                A generic character health management system and the relative UI.\n                            </span>\n</li>\n<li>Throwing System:\n                            <span>\n                                Component gives the player the ability to aim and throw equipped\n                                items.\n                            </span>\n</li>\n<li>Chaos Implementation: \n                            <span>\n                                Setted up unreal engine’s chaos system for every destructible\n                                object of the game.\n                            </span>\n</li>\n<li>Highlighting System:\n                            <span> \n                                A system for highlighting all interactables objects of the game\n                                when the player is close to them.\n                            </span>\n</li>\n<li>Chest System:\n                            <span> \n                                A chest system with fixed drops, for collecting in-game items. And the\n                                relative UI when collecting new items.\n                            </span>\n</li>\n<li>Items:\n                            <span> \n                                All the items that give the player offensive and defensive abilities.\n                            </span>\n</li>\n</ul>\n<p></p>"
+      },
+      {
+        "title": "UE5 and Blueprints",
+        "html": "<p>\n                    This was my first project in Unreal Engine, and consequently, my first time working with Blueprints. \n                    After six months of using them, I’ve come to the conclusion that they are an extremely powerful tool, especially during the initial prototyping phase. \n                    However, to achieve a clean, organized, and—most importantly—easily maintainable result over time, it’s essential to complement them with good old C++. \n                    As projects grow in complexity, there's a serious risk of getting lost in a tangled mess of nodes that becomes increasingly difficult to manage.<br><br>\n\n                    The class shown below is the base class from which all controllable characters (including the little main drone) inherit.\n\n                    </p><ol>\n<li>Unreal Events<br>\n<span>\n                                Begin Play: Just a basic initialization of the pawn, caching some external references.<br>\n</span>\n</li>\n<li>Movement<br>\n<span>\n                                Input actions from Unreal Enhanced Input System for translation and rotation input.\n                            </span>\n</li>\n<li>Interactable Detection<br>\n<span>\n                                Begin/end ovelap component events for the detection of all interactables (interface) nears the player.\n                                Basically a simple sphere collider.\n                            </span>\n</li>\n<li>Damage <br>\n<span>\n                                Default Unreal's event for damage applying\n                            </span>\n</li>\n<li>Custom Events<br>\n<ul>\n<li>\n                                    TryPossessNewEntity: event for trying to control a new robot. empty because each character needs specific implementation. \n                                </li>\n<li>\n                                    PossessNewEntity: Event for the actual transition to controlling a new robot, in Unreal terms, assigning a new pawn to the player controller.\n                                </li>\n<li>\n                                    PossessionStarted: Called on every robots when the player start to controlling them.\n                                </li>\n<li>\n                                    PossessionEnded: Called on every robots when the player stop to controlling them.\n                                </li>\n<li>\n                                    Respawn: Event used for respawning a robot.  \n                                </li>\n</ul>\n</li>\n<li>Health Manager Events<br>\n<span>\n                                Callbacks from the custom actor component Health Manager, primarily used to trigger VFX associated with various events (damage, regeneration, etc.). \n                                The actual health management is handled within the component's Blueprint.\n                            </span>\n</li>\n</ol>\n<p></p>\n<iframe allowfullscreen=\"\" scrolling=\"no\" src=\"https://blueprintue.com/render/nu_4_8g6/\"></iframe>"
+      }
+    ]
+  },
+  {
     "id": "state-machine-system",
     "legacyPage": "SMS.html",
     "title": "State Machine System",
@@ -73,7 +138,7 @@
       "teamSize": "1",
       "timeFrame": "Few weeks",
       "engine": "Unreal Engine 5",
-      "platform": "Windows"
+      "platform": "FAB Marketplace"
     },
     "aboutHtml": "<p>A plugin for Unreal Engine, available on the FAB Marketplace, originally developed during the production of The Negative Edge.<br><br>\n                    It is a generic state machine system for Actors that supports concurrent state machines, custom transitions, input-driven logic, and seamless Blueprint/C++ integration.<br><br>\n                    Includes a sample project with a playable character demonstrating movement, jumping, shooting, and state communication.\n                    </p>",
     "links": [
@@ -110,7 +175,7 @@
       "teamSize": "1",
       "timeFrame": "In progress",
       "engine": "Unreal Engine 5",
-      "platform": "Windows"
+      "platform": ""
     },
     "aboutHtml": "<p> GVUEDK (Gabevlogd Unreal Engine Development Kit) is my personal framework for Unreal Engine development.<br>\n                        It provides a collection of modular systems and utilities that I’ve built to streamline game development, prototyping, and 3C programming. \n                    </p>",
     "links": [
@@ -120,47 +185,6 @@
       }
     ],
     "sections": []
-  },
-  {
-    "id": "weabot",
-    "legacyPage": "weabot.html",
-    "title": "Weabot",
-    "description": "An environmental puzzle game where the character is a small flying drone with the ability to take control of other robots encountered along its path, using them to overcome environmental puzzles that block its way.",
-    "media": {
-      "type": "video",
-      "src": "video/Weabot.mp4"
-    },
-    "meta": {
-      "teamSize": "10",
-      "timeFrame": "6 Months",
-      "engine": "Unreal Engine 5",
-      "platform": "Windows"
-    },
-    "aboutHtml": "<p>It is an environmental puzzle game.\n                         The main character is a small flying drone with the ability to take control of other robots encountered along its path, using them to overcome environmental puzzles that block its way.\n                         <br><br>We created a demo consisting of 4 levels (the first one is a tutorial) with a duration of about 40-60 minutes (depending on how much the player explores, as there are hidden optional puzzles in the levels).\n                         <br><br>You can find the last version of the game at the bottom of this page.\n                        </p>",
-    "links": [
-      {
-        "label": "View on Steam",
-        "url": "https://store.steampowered.com/app/4075260/Weabot/"
-      },
-      {
-        "label": "Repository",
-        "url": "https://github.com/gabevlogd/Weabot"
-      }
-    ],
-    "sections": [
-      {
-        "title": "What Is Gamelab?",
-        "html": "<p>\n                    GameLabs are collaborative workshops where students from all disciplines—Game Design, Game Programming, 3D Art, and 2D Art—form teams to create a game from scratch (create a remake of an existing game for first-year students). \n                    These teams are given a set development time to complete and deliver a final product, including a pitch for a hypothetical publisher, simulating a real-world work environment.<br><br>\n                    Students are expected to self-organize and collaborate effectively to bring the game to completion. \n                    The only \"rule\" is that they must use development management tools (such as Trello or Jira) to track and organize the entire creative process, and apply Git version control with proper GitFlow practices.\n                </p>"
-      },
-      {
-        "title": "Main Personal Contribute",
-        "html": "<p>In our team, there were two programmers, and we divided the various systems equally. The main systems I worked on include:\n                    </p><ul>\n<li>Multiple controllable character system: \n                            <span>\n                                the system that manages the core game mechanic, allowing players to control multiple characters through an inheritance-based structure.   \n                            </span>\n</li>\n<li>Health System:\n                            <span> \n                                A generic character health management system and the relative UI.\n                            </span>\n</li>\n<li>Throwing System:\n                            <span>\n                                Component gives the player the ability to aim and throw equipped\n                                items.\n                            </span>\n</li>\n<li>Chaos Implementation: \n                            <span>\n                                Setted up unreal engine’s chaos system for every destructible\n                                object of the game.\n                            </span>\n</li>\n<li>Highlighting System:\n                            <span> \n                                A system for highlighting all interactables objects of the game\n                                when the player is close to them.\n                            </span>\n</li>\n<li>Chest System:\n                            <span> \n                                A chest system with fixed drops, for collecting in-game items. And the\n                                relative UI when collecting new items.\n                            </span>\n</li>\n<li>Items:\n                            <span> \n                                All the items that give the player offensive and defensive abilities.\n                            </span>\n</li>\n</ul>\n<p></p>"
-      },
-      {
-        "title": "UE5 and Blueprints",
-        "html": "<p>\n                    This was my first project in Unreal Engine, and consequently, my first time working with Blueprints. \n                    After six months of using them, I’ve come to the conclusion that they are an extremely powerful tool, especially during the initial prototyping phase. \n                    However, to achieve a clean, organized, and—most importantly—easily maintainable result over time, it’s essential to complement them with good old C++. \n                    As projects grow in complexity, there's a serious risk of getting lost in a tangled mess of nodes that becomes increasingly difficult to manage.<br><br>\n\n                    The class shown below is the base class from which all controllable characters (including the little main drone) inherit.\n\n                    </p><ol>\n<li>Unreal Events<br>\n<span>\n                                Begin Play: Just a basic initialization of the pawn, caching some external references.<br>\n</span>\n</li>\n<li>Movement<br>\n<span>\n                                Input actions from Unreal Enhanced Input System for translation and rotation input.\n                            </span>\n</li>\n<li>Interactable Detection<br>\n<span>\n                                Begin/end ovelap component events for the detection of all interactables (interface) nears the player.\n                                Basically a simple sphere collider.\n                            </span>\n</li>\n<li>Damage <br>\n<span>\n                                Default Unreal's event for damage applying\n                            </span>\n</li>\n<li>Custom Events<br>\n<ul>\n<li>\n                                    TryPossessNewEntity: event for trying to control a new robot. empty because each character needs specific implementation. \n                                </li>\n<li>\n                                    PossessNewEntity: Event for the actual transition to controlling a new robot, in Unreal terms, assigning a new pawn to the player controller.\n                                </li>\n<li>\n                                    PossessionStarted: Called on every robots when the player start to controlling them.\n                                </li>\n<li>\n                                    PossessionEnded: Called on every robots when the player stop to controlling them.\n                                </li>\n<li>\n                                    Respawn: Event used for respawning a robot.  \n                                </li>\n</ul>\n</li>\n<li>Health Manager Events<br>\n<span>\n                                Callbacks from the custom actor component Health Manager, primarily used to trigger VFX associated with various events (damage, regeneration, etc.). \n                                The actual health management is handled within the component's Blueprint.\n                            </span>\n</li>\n</ol>\n<p></p>\n<iframe allowfullscreen=\"\" scrolling=\"no\" src=\"https://blueprintue.com/render/nu_4_8g6/\"></iframe>"
-      }
-    ]
   },
   {
     "id": "push-sushi",
@@ -224,9 +248,9 @@
     },
     "meta": {
       "teamSize": "1",
-      "timeFrame": "2 Days",
+      "timeFrame": "2  Days",
       "engine": "Unity",
-      "platform": "Built-in"
+      "platform": "HDRP"
     },
     "aboutHtml": "<p>\n                        Here's my assignment for the end of the shading module in HLSL on Unity.\n                        Assignment characteristics: \n                        <br><br>Create a crystal shader that must have:\n                        </p><ul>\n<li>transparency</li>\n<li>refraction</li>\n<li>rim light</li>\n</ul>\n<p></p>",
     "links": [],
